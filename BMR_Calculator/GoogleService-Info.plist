@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>1009476110944-ishpuf5oou9coaalop2lbe7aiikq2umr.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1009476110944-ishpuf5oou9coaalop2lbe7aiikq2umr</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDLPln_pZzx06KVLGfFpYjKu_p7c3FGOOo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1009476110944</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.dc.BMR-Calculator</string>
+	<key>PROJECT_ID</key>
+	<string>bmibmrcalculator</string>
+	<key>STORAGE_BUCKET</key>
+	<string>bmibmrcalculator.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1009476110944:ios:8593fbd66e2f7191</string>
+	<key>DATABASE_URL</key>
+	<string>https://bmibmrcalculator.firebaseio.com</string>
+</dict>
+</plist>
