@@ -10,18 +10,19 @@
 		0188495372C84B3F0E5825B5 /* libPods-BMIBMRCalculator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD7F70BD73EB8C8DD01B428 /* libPods-BMIBMRCalculator.a */; };
 		E52A05951D0C57F600E64B88 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E52A05941D0C57F600E64B88 /* CoreData.framework */; };
 		E52A05981D0C58B400E64B88 /* BMIBMRRecord.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E52A05961D0C58B400E64B88 /* BMIBMRRecord.xcdatamodeld */; };
-		E52A05A41D0C645B00E64B88 /* HistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E52A05A31D0C645B00E64B88 /* HistoryTableViewController.m */; };
-		E52A05A71D0C659100E64B88 /* HistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E52A05A61D0C659100E64B88 /* HistoryTableViewCell.m */; };
-		E52A05AA1D0C697600E64B88 /* MyTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E52A05A91D0C697600E64B88 /* MyTabBarController.m */; };
 		E56A079B1D07F916009B8F32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E56A079A1D07F916009B8F32 /* main.m */; };
-		E56A079E1D07F916009B8F32 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E56A079D1D07F916009B8F32 /* AppDelegate.m */; };
-		E56A07A11D07F916009B8F32 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E56A07A01D07F916009B8F32 /* ViewController.m */; };
 		E56A07A41D07F916009B8F32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E56A07A21D07F916009B8F32 /* Main.storyboard */; };
 		E56A07A61D07F916009B8F32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E56A07A51D07F916009B8F32 /* Assets.xcassets */; };
 		E56A07A91D07F916009B8F32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E56A07A71D07F916009B8F32 /* LaunchScreen.storyboard */; };
-		E5F63EAA1D0E6D930042CD19 /* backgroundImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F63EA91D0E6D930042CD19 /* backgroundImage.png */; };
-		E5F63EAF1D0E8E8A0042CD19 /* AllRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F63EAC1D0E8E8A0042CD19 /* AllRecord.m */; };
-		E5F63EB01D0E8E8A0042CD19 /* AllRecord+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F63EAE1D0E8E8A0042CD19 /* AllRecord+CoreDataProperties.m */; };
+		E5C24B002000C5140037BB41 /* backgroundImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E5C24AFF2000C5140037BB41 /* backgroundImage.png */; };
+		E5C24B052000C51B0037BB41 /* AllRecord+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C24B012000C51B0037BB41 /* AllRecord+CoreDataProperties.m */; };
+		E5C24B062000C51B0037BB41 /* AllRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C24B032000C51B0037BB41 /* AllRecord.m */; };
+		E5C24B092000C5210037BB41 /* HistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C24B072000C5210037BB41 /* HistoryTableViewCell.m */; };
+		E5C24B122000C52A0037BB41 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C24B0A2000C5290037BB41 /* AppDelegate.m */; };
+		E5C24B132000C52A0037BB41 /* HistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C24B0D2000C5290037BB41 /* HistoryTableViewController.m */; };
+		E5C24B142000C52A0037BB41 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C24B0F2000C52A0037BB41 /* ViewController.m */; };
+		E5C24B152000C52A0037BB41 /* MyTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C24B102000C52A0037BB41 /* MyTabBarController.m */; };
+		E5C24B182000CD4B0037BB41 /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C24B172000CD4B0037BB41 /* MainVC.m */; };
 		E5F63EB31D0E8E9C0042CD19 /* MyCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F63EB21D0E8E9C0042CD19 /* MyCoreDataManager.m */; };
 		E5F63EB51D0E978E0042CD19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5F63EB41D0E978E0042CD19 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -32,27 +33,29 @@
 		966125A211D2B4555F37A346 /* Pods-BMIBMRCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMIBMRCalculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BMIBMRCalculator/Pods-BMIBMRCalculator.debug.xcconfig"; sourceTree = "<group>"; };
 		E52A05941D0C57F600E64B88 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		E52A05971D0C58B400E64B88 /* BMIBMRRecord.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BMIBMRRecord.xcdatamodel; sourceTree = "<group>"; };
-		E52A05A21D0C645B00E64B88 /* HistoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryTableViewController.h; sourceTree = "<group>"; };
-		E52A05A31D0C645B00E64B88 /* HistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryTableViewController.m; sourceTree = "<group>"; };
-		E52A05A51D0C659100E64B88 /* HistoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryTableViewCell.h; sourceTree = "<group>"; };
-		E52A05A61D0C659100E64B88 /* HistoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryTableViewCell.m; sourceTree = "<group>"; };
-		E52A05A81D0C697600E64B88 /* MyTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTabBarController.h; sourceTree = "<group>"; };
-		E52A05A91D0C697600E64B88 /* MyTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTabBarController.m; sourceTree = "<group>"; };
 		E56A07961D07F916009B8F32 /* BMIBMR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BMIBMR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E56A079A1D07F916009B8F32 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E56A079C1D07F916009B8F32 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		E56A079D1D07F916009B8F32 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E56A079F1D07F916009B8F32 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E56A07A01D07F916009B8F32 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E56A07A31D07F916009B8F32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E56A07A51D07F916009B8F32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E56A07A81D07F916009B8F32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E56A07AA1D07F916009B8F32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E5F63EA91D0E6D930042CD19 /* backgroundImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundImage.png; sourceTree = "<group>"; };
-		E5F63EAB1D0E8E8A0042CD19 /* AllRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AllRecord.h; path = BMR_Calculator/AllRecord.h; sourceTree = "<group>"; };
-		E5F63EAC1D0E8E8A0042CD19 /* AllRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AllRecord.m; path = BMR_Calculator/AllRecord.m; sourceTree = "<group>"; };
-		E5F63EAD1D0E8E8A0042CD19 /* AllRecord+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AllRecord+CoreDataProperties.h"; path = "BMR_Calculator/AllRecord+CoreDataProperties.h"; sourceTree = "<group>"; };
-		E5F63EAE1D0E8E8A0042CD19 /* AllRecord+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AllRecord+CoreDataProperties.m"; path = "BMR_Calculator/AllRecord+CoreDataProperties.m"; sourceTree = "<group>"; };
+		E5C24AFF2000C5140037BB41 /* backgroundImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backgroundImage.png; path = Resources/backgroundImage.png; sourceTree = "<group>"; };
+		E5C24B012000C51B0037BB41 /* AllRecord+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AllRecord+CoreDataProperties.m"; sourceTree = "<group>"; };
+		E5C24B022000C51B0037BB41 /* AllRecord+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AllRecord+CoreDataProperties.h"; sourceTree = "<group>"; };
+		E5C24B032000C51B0037BB41 /* AllRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllRecord.m; sourceTree = "<group>"; };
+		E5C24B042000C51B0037BB41 /* AllRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllRecord.h; sourceTree = "<group>"; };
+		E5C24B072000C5210037BB41 /* HistoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryTableViewCell.m; sourceTree = "<group>"; };
+		E5C24B082000C5210037BB41 /* HistoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryTableViewCell.h; sourceTree = "<group>"; };
+		E5C24B0A2000C5290037BB41 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Controller/AppDelegate.m; sourceTree = "<group>"; };
+		E5C24B0B2000C5290037BB41 /* HistoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryTableViewController.h; path = Controller/HistoryTableViewController.h; sourceTree = "<group>"; };
+		E5C24B0C2000C5290037BB41 /* MyTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyTabBarController.h; path = Controller/MyTabBarController.h; sourceTree = "<group>"; };
+		E5C24B0D2000C5290037BB41 /* HistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryTableViewController.m; path = Controller/HistoryTableViewController.m; sourceTree = "<group>"; };
+		E5C24B0E2000C52A0037BB41 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Controller/AppDelegate.h; sourceTree = "<group>"; };
+		E5C24B0F2000C52A0037BB41 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Controller/ViewController.m; sourceTree = "<group>"; };
+		E5C24B102000C52A0037BB41 /* MyTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyTabBarController.m; path = Controller/MyTabBarController.m; sourceTree = "<group>"; };
+		E5C24B112000C52A0037BB41 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Controller/ViewController.h; sourceTree = "<group>"; };
+		E5C24B162000CD4B0037BB41 /* MainVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MainVC.h; path = Controller/MainVC.h; sourceTree = "<group>"; };
+		E5C24B172000CD4B0037BB41 /* MainVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MainVC.m; path = Controller/MainVC.m; sourceTree = "<group>"; };
 		E5F63EB11D0E8E9C0042CD19 /* MyCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCoreDataManager.h; path = BMR_Calculator/MyCoreDataManager.h; sourceTree = "<group>"; };
 		E5F63EB21D0E8E9C0042CD19 /* MyCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyCoreDataManager.m; path = BMR_Calculator/MyCoreDataManager.m; sourceTree = "<group>"; };
 		E5F63EB41D0E978E0042CD19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -94,10 +97,6 @@
 				E52A05941D0C57F600E64B88 /* CoreData.framework */,
 				E56A07981D07F916009B8F32 /* BMIBMR_Calculator */,
 				E52A05961D0C58B400E64B88 /* BMIBMRRecord.xcdatamodeld */,
-				E5F63EAB1D0E8E8A0042CD19 /* AllRecord.h */,
-				E5F63EAC1D0E8E8A0042CD19 /* AllRecord.m */,
-				E5F63EAD1D0E8E8A0042CD19 /* AllRecord+CoreDataProperties.h */,
-				E5F63EAE1D0E8E8A0042CD19 /* AllRecord+CoreDataProperties.m */,
 				E5F63EB11D0E8E9C0042CD19 /* MyCoreDataManager.h */,
 				E5F63EB21D0E8E9C0042CD19 /* MyCoreDataManager.m */,
 				E56A07971D07F916009B8F32 /* Products */,
@@ -117,17 +116,10 @@
 		E56A07981D07F916009B8F32 /* BMIBMR_Calculator */ = {
 			isa = PBXGroup;
 			children = (
-				E5F63EA91D0E6D930042CD19 /* backgroundImage.png */,
-				E56A079C1D07F916009B8F32 /* AppDelegate.h */,
-				E56A079D1D07F916009B8F32 /* AppDelegate.m */,
-				E52A05A81D0C697600E64B88 /* MyTabBarController.h */,
-				E52A05A91D0C697600E64B88 /* MyTabBarController.m */,
-				E56A079F1D07F916009B8F32 /* ViewController.h */,
-				E56A07A01D07F916009B8F32 /* ViewController.m */,
-				E52A05A21D0C645B00E64B88 /* HistoryTableViewController.h */,
-				E52A05A31D0C645B00E64B88 /* HistoryTableViewController.m */,
-				E52A05A51D0C659100E64B88 /* HistoryTableViewCell.h */,
-				E52A05A61D0C659100E64B88 /* HistoryTableViewCell.m */,
+				E5C24AFD2000C46D0037BB41 /* Resources */,
+				E5C24AFC2000C4680037BB41 /* Model */,
+				E5C24AFB2000C45A0037BB41 /* View */,
+				E5C24AF92000C4460037BB41 /* Controller */,
 				E56A07A21D07F916009B8F32 /* Main.storyboard */,
 				E56A07A51D07F916009B8F32 /* Assets.xcassets */,
 				E56A07A71D07F916009B8F32 /* LaunchScreen.storyboard */,
@@ -145,6 +137,51 @@
 				E56A079A1D07F916009B8F32 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E5C24AF92000C4460037BB41 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E5C24B0E2000C52A0037BB41 /* AppDelegate.h */,
+				E5C24B0A2000C5290037BB41 /* AppDelegate.m */,
+				E5C24B0B2000C5290037BB41 /* HistoryTableViewController.h */,
+				E5C24B0D2000C5290037BB41 /* HistoryTableViewController.m */,
+				E5C24B0C2000C5290037BB41 /* MyTabBarController.h */,
+				E5C24B102000C52A0037BB41 /* MyTabBarController.m */,
+				E5C24B162000CD4B0037BB41 /* MainVC.h */,
+				E5C24B172000CD4B0037BB41 /* MainVC.m */,
+				E5C24B112000C52A0037BB41 /* ViewController.h */,
+				E5C24B0F2000C52A0037BB41 /* ViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		E5C24AFB2000C45A0037BB41 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E5C24B082000C5210037BB41 /* HistoryTableViewCell.h */,
+				E5C24B072000C5210037BB41 /* HistoryTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E5C24AFC2000C4680037BB41 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E5C24B042000C51B0037BB41 /* AllRecord.h */,
+				E5C24B032000C51B0037BB41 /* AllRecord.m */,
+				E5C24B022000C51B0037BB41 /* AllRecord+CoreDataProperties.h */,
+				E5C24B012000C51B0037BB41 /* AllRecord+CoreDataProperties.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E5C24AFD2000C46D0037BB41 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E5C24AFF2000C5140037BB41 /* backgroundImage.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,9 +246,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E56A07A91D07F916009B8F32 /* LaunchScreen.storyboard in Resources */,
-				E5F63EAA1D0E6D930042CD19 /* backgroundImage.png in Resources */,
 				E5F63EB51D0E978E0042CD19 /* GoogleService-Info.plist in Resources */,
 				E56A07A61D07F916009B8F32 /* Assets.xcassets in Resources */,
+				E5C24B002000C5140037BB41 /* backgroundImage.png in Resources */,
 				E56A07A41D07F916009B8F32 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,16 +308,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E52A05A41D0C645B00E64B88 /* HistoryTableViewController.m in Sources */,
-				E56A07A11D07F916009B8F32 /* ViewController.m in Sources */,
-				E52A05A71D0C659100E64B88 /* HistoryTableViewCell.m in Sources */,
-				E52A05AA1D0C697600E64B88 /* MyTabBarController.m in Sources */,
-				E5F63EB01D0E8E8A0042CD19 /* AllRecord+CoreDataProperties.m in Sources */,
+				E5C24B142000C52A0037BB41 /* ViewController.m in Sources */,
+				E5C24B132000C52A0037BB41 /* HistoryTableViewController.m in Sources */,
+				E5C24B182000CD4B0037BB41 /* MainVC.m in Sources */,
+				E5C24B052000C51B0037BB41 /* AllRecord+CoreDataProperties.m in Sources */,
+				E5C24B152000C52A0037BB41 /* MyTabBarController.m in Sources */,
+				E5C24B062000C51B0037BB41 /* AllRecord.m in Sources */,
+				E5C24B092000C5210037BB41 /* HistoryTableViewCell.m in Sources */,
 				E52A05981D0C58B400E64B88 /* BMIBMRRecord.xcdatamodeld in Sources */,
 				E5F63EB31D0E8E9C0042CD19 /* MyCoreDataManager.m in Sources */,
-				E56A079E1D07F916009B8F32 /* AppDelegate.m in Sources */,
-				E5F63EAF1D0E8E8A0042CD19 /* AllRecord.m in Sources */,
 				E56A079B1D07F916009B8F32 /* main.m in Sources */,
+				E5C24B122000C52A0037BB41 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
