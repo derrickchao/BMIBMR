@@ -7,47 +7,35 @@
 //
 
 #import "HistoryTableViewController.h"
-#import "MyCoreDataManager.h"
 #import "HistoryTableViewCell.h"
 #import "AllRecord+CoreDataProperties.h"
-#import "MyTabBarController.h"
+#import "CoreDataManager.h"
 
-#define BMIRECORD_KEY @"bmiRecord"
-#define BMRRECORD_KEY @"bmrRecord"
-#define TIMESTAMP_KEY @"timeStamp"
-
-@interface HistoryTableViewController ()
+@interface HistoryTableViewController () <CoreDataManagerDelegate>
 {
-    MyCoreDataManager *dataManager;
+    NSDateFormatter *dateFormater;
 }
+@property (strong, nonatomic) IBOutlet UIView *noResultsView;
 @end
 
 @implementation HistoryTableViewController
 
-- (void) viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    [self.tableView reloadData];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+#ifdef DEBUG
+    NSLog(@"HistoryTableViewController viewDidLoad");
+#endif
     
-    dataManager = ((MyTabBarController *)self.tabBarController).dataManager;
+    dateFormater = [[NSDateFormatter alloc] init];
+    [dateFormater setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    [CoreDataManager shareInstance].delegate = self;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.tableView.separatorInset = UIEdgeInsetsZero;
+    UIView *view = [[UIView alloc] init];
+    self.tableView.tableFooterView = view;
 
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -57,7 +45,14 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [dataManager totalItems];
+    
+    if ([[CoreDataManager shareInstance] totalRecords] == 0) {
+        self.tableView.backgroundView = self.noResultsView;
+    } else {
+        self.tableView.backgroundView = nil;
+    }
+    
+    return [[CoreDataManager shareInstance] totalRecords];
 }
 
 
@@ -65,18 +60,13 @@
     
     HistoryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"historyCell" forIndexPath:indexPath];
     
-    // Configure the cell...
-    NSDateFormatter *dateFormater = [[NSDateFormatter alloc] init];
-    [dateFormater setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    AllRecord *record = [[CoreDataManager shareInstance] getRecordByIndex:indexPath.row];
+    NSString *timeStamp = [NSString stringWithFormat:@"%@", [dateFormater stringFromDate:record.timeStamp]];
     
-    NSManagedObject *object = [dataManager getByIndex:indexPath.row];
-    NSString *timeStamp = [NSString stringWithFormat:@"%@", [dateFormater stringFromDate:[object valueForKey:TIMESTAMP_KEY]]];
-    
-    cell.bmiRecordLabel.text = [NSString stringWithFormat:@"BMI: %.1f",[[object valueForKey:BMIRECORD_KEY] floatValue]];
-    cell.bmrRecordLabel.text = [NSString stringWithFormat:@"BMR: %.1f cals/day",[[object valueForKey:BMRRECORD_KEY] floatValue]];
+    cell.bmiRecordLabel.text = [NSString stringWithFormat:@"BMI: %@",record.bmiRecord];
+    cell.bmrRecordLabel.text = [NSString stringWithFormat:@"BMR: %@ cals/day",record.bmrRecord];
     cell.timeStampLabel.text = timeStamp;
 
-    
     return cell;
 }
 
@@ -88,47 +78,41 @@
     return YES;
 }
 
-
-
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        NSManagedObject *object = [dataManager getByIndex:indexPath.row];
+        AllRecord *recordToDelete = [[CoreDataManager shareInstance] getRecordByIndex:indexPath.row];
+        [[CoreDataManager shareInstance] deleteRecord:recordToDelete];
         
-        [dataManager deleteItem:object];
-        
-        [dataManager save];
-        
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
 
+#pragma mark - CoreDataManagerDelegate
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+- (void)willChangedContent {
+    [self.tableView beginUpdates];
 }
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+- (void)didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(ResultChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
+    
+    switch (type) {
+        case Insert:
+            [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationNone];
+            break;
+        case Delete:
+            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+            break;
+        default:
+            break;
+    }
 }
-*/
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)didChangedContent {
+    [self.tableView endUpdates];
 }
-*/
+
 
 @end

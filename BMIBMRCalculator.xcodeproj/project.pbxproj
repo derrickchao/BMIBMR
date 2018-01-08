@@ -20,10 +20,8 @@
 		E5C24B092000C5210037BB41 /* HistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C24B072000C5210037BB41 /* HistoryTableViewCell.m */; };
 		E5C24B122000C52A0037BB41 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C24B0A2000C5290037BB41 /* AppDelegate.m */; };
 		E5C24B132000C52A0037BB41 /* HistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C24B0D2000C5290037BB41 /* HistoryTableViewController.m */; };
-		E5C24B142000C52A0037BB41 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C24B0F2000C52A0037BB41 /* ViewController.m */; };
-		E5C24B152000C52A0037BB41 /* MyTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C24B102000C52A0037BB41 /* MyTabBarController.m */; };
 		E5C24B182000CD4B0037BB41 /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C24B172000CD4B0037BB41 /* MainVC.m */; };
-		E5F63EB31D0E8E9C0042CD19 /* MyCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F63EB21D0E8E9C0042CD19 /* MyCoreDataManager.m */; };
+		E5C24BA320020BDD0037BB41 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C24BA220020BDD0037BB41 /* CoreDataManager.m */; };
 		E5F63EB51D0E978E0042CD19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5F63EB41D0E978E0042CD19 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -48,16 +46,13 @@
 		E5C24B082000C5210037BB41 /* HistoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryTableViewCell.h; sourceTree = "<group>"; };
 		E5C24B0A2000C5290037BB41 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Controller/AppDelegate.m; sourceTree = "<group>"; };
 		E5C24B0B2000C5290037BB41 /* HistoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryTableViewController.h; path = Controller/HistoryTableViewController.h; sourceTree = "<group>"; };
-		E5C24B0C2000C5290037BB41 /* MyTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyTabBarController.h; path = Controller/MyTabBarController.h; sourceTree = "<group>"; };
 		E5C24B0D2000C5290037BB41 /* HistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryTableViewController.m; path = Controller/HistoryTableViewController.m; sourceTree = "<group>"; };
 		E5C24B0E2000C52A0037BB41 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Controller/AppDelegate.h; sourceTree = "<group>"; };
-		E5C24B0F2000C52A0037BB41 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Controller/ViewController.m; sourceTree = "<group>"; };
-		E5C24B102000C52A0037BB41 /* MyTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyTabBarController.m; path = Controller/MyTabBarController.m; sourceTree = "<group>"; };
-		E5C24B112000C52A0037BB41 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Controller/ViewController.h; sourceTree = "<group>"; };
 		E5C24B162000CD4B0037BB41 /* MainVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MainVC.h; path = Controller/MainVC.h; sourceTree = "<group>"; };
 		E5C24B172000CD4B0037BB41 /* MainVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MainVC.m; path = Controller/MainVC.m; sourceTree = "<group>"; };
-		E5F63EB11D0E8E9C0042CD19 /* MyCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCoreDataManager.h; path = BMR_Calculator/MyCoreDataManager.h; sourceTree = "<group>"; };
-		E5F63EB21D0E8E9C0042CD19 /* MyCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyCoreDataManager.m; path = BMR_Calculator/MyCoreDataManager.m; sourceTree = "<group>"; };
+		E5C24BA120020BDD0037BB41 /* CoreDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CoreDataManager.h; path = Controller/CoreDataManager.h; sourceTree = "<group>"; };
+		E5C24BA220020BDD0037BB41 /* CoreDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CoreDataManager.m; path = Controller/CoreDataManager.m; sourceTree = "<group>"; };
+		E5C24BA420020DA70037BB41 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Controller/Constants.h; sourceTree = "<group>"; };
 		E5F63EB41D0E978E0042CD19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,8 +92,6 @@
 				E52A05941D0C57F600E64B88 /* CoreData.framework */,
 				E56A07981D07F916009B8F32 /* BMIBMR_Calculator */,
 				E52A05961D0C58B400E64B88 /* BMIBMRRecord.xcdatamodeld */,
-				E5F63EB11D0E8E9C0042CD19 /* MyCoreDataManager.h */,
-				E5F63EB21D0E8E9C0042CD19 /* MyCoreDataManager.m */,
 				E56A07971D07F916009B8F32 /* Products */,
 				BF4C58F3717FA3390985C522 /* Pods */,
 				BFD87CD4768332ECE44BA806 /* Frameworks */,
@@ -146,12 +139,11 @@
 				E5C24B0A2000C5290037BB41 /* AppDelegate.m */,
 				E5C24B0B2000C5290037BB41 /* HistoryTableViewController.h */,
 				E5C24B0D2000C5290037BB41 /* HistoryTableViewController.m */,
-				E5C24B0C2000C5290037BB41 /* MyTabBarController.h */,
-				E5C24B102000C52A0037BB41 /* MyTabBarController.m */,
 				E5C24B162000CD4B0037BB41 /* MainVC.h */,
 				E5C24B172000CD4B0037BB41 /* MainVC.m */,
-				E5C24B112000C52A0037BB41 /* ViewController.h */,
-				E5C24B0F2000C52A0037BB41 /* ViewController.m */,
+				E5C24BA120020BDD0037BB41 /* CoreDataManager.h */,
+				E5C24BA220020BDD0037BB41 /* CoreDataManager.m */,
+				E5C24BA420020DA70037BB41 /* Constants.h */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -308,15 +300,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5C24B142000C52A0037BB41 /* ViewController.m in Sources */,
 				E5C24B132000C52A0037BB41 /* HistoryTableViewController.m in Sources */,
 				E5C24B182000CD4B0037BB41 /* MainVC.m in Sources */,
 				E5C24B052000C51B0037BB41 /* AllRecord+CoreDataProperties.m in Sources */,
-				E5C24B152000C52A0037BB41 /* MyTabBarController.m in Sources */,
 				E5C24B062000C51B0037BB41 /* AllRecord.m in Sources */,
+				E5C24BA320020BDD0037BB41 /* CoreDataManager.m in Sources */,
 				E5C24B092000C5210037BB41 /* HistoryTableViewCell.m in Sources */,
 				E52A05981D0C58B400E64B88 /* BMIBMRRecord.xcdatamodeld in Sources */,
-				E5F63EB31D0E8E9C0042CD19 /* MyCoreDataManager.m in Sources */,
 				E56A079B1D07F916009B8F32 /* main.m in Sources */,
 				E5C24B122000C52A0037BB41 /* AppDelegate.m in Sources */,
 			);

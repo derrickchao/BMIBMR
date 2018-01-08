@@ -7,10 +7,9 @@
 //
 
 #import "MainVC.h"
-#import "MyCoreDataManager.h"
-#import "MyTabBarController.h"
 #import "AllRecord+CoreDataProperties.h"
 #import <GoogleMobileAds/GoogleMobileAds.h>
+#import "CoreDataManager.h"
 
 #define DEFAULT_ZERO_STRING     @"0.0"
 
@@ -61,7 +60,15 @@
     self.ageTextField.inputAccessoryView = toolBar;
     self.heightTextField.inputAccessoryView = toolBar;
     self.weightTextField.inputAccessoryView = toolBar;
-    
+}
+
+- (void)setDefault {
+    self.ageTextField.text = nil;
+    self.heightTextField.text = nil;
+    self.weightTextField.text = nil;
+    self.bmiResultLabel.text = DEFAULT_ZERO_STRING;
+    self.bmrResultLabel.text = DEFAULT_ZERO_STRING;
+    self.genderSegmentControl.selectedSegmentIndex = 0;
 }
 
 #pragma mark - Action Methods
@@ -100,14 +107,7 @@
 }
 
 - (IBAction)clearBtnPressed:(UIButton *)sender {
-    
-    self.ageTextField.text = nil;
-    self.heightTextField.text = nil;
-    self.weightTextField.text = nil;
-    self.bmiResultLabel.text = DEFAULT_ZERO_STRING;
-    self.bmrResultLabel.text = DEFAULT_ZERO_STRING;
-    self.genderSegmentControl.selectedSegmentIndex = 0;
-    
+    [self setDefault];
 }
 
 - (IBAction)saveBtnPressed:(UIButton *)sender {
@@ -119,12 +119,17 @@
         [self presentViewController:alert animated:YES completion:nil];
     } else {
         
+        // Create a newItem for every record.
+        [[CoreDataManager shareInstance] createNewRecordWithBMI:self.bmiResultLabel.text bmr:self.bmrResultLabel.text timeStamp:[NSDate date]];
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"Save successful" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self setDefault];
+        }];
+        
+        [alert addAction:ok];
+        [self presentViewController:alert animated:true completion:nil];
     }
-    
-}
-
-- (IBAction)genderValueChanged:(UISegmentedControl *)sender {
-    
 }
 
 - (void)doneBarBtnPressed {
