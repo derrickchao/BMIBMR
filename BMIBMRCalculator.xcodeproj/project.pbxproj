@@ -10,6 +10,7 @@
 		0188495372C84B3F0E5825B5 /* libPods-BMIBMRCalculator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD7F70BD73EB8C8DD01B428 /* libPods-BMIBMRCalculator.a */; };
 		E52A05951D0C57F600E64B88 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E52A05941D0C57F600E64B88 /* CoreData.framework */; };
 		E52A05981D0C58B400E64B88 /* BMIBMRRecord.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E52A05961D0C58B400E64B88 /* BMIBMRRecord.xcdatamodeld */; };
+		E547D0F22005FC4D00E54920 /* weightScale.png in Resources */ = {isa = PBXBuildFile; fileRef = E547D0F12005FC4D00E54920 /* weightScale.png */; };
 		E56A079B1D07F916009B8F32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E56A079A1D07F916009B8F32 /* main.m */; };
 		E56A07A41D07F916009B8F32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E56A07A21D07F916009B8F32 /* Main.storyboard */; };
 		E56A07A61D07F916009B8F32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E56A07A51D07F916009B8F32 /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 		966125A211D2B4555F37A346 /* Pods-BMIBMRCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMIBMRCalculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BMIBMRCalculator/Pods-BMIBMRCalculator.debug.xcconfig"; sourceTree = "<group>"; };
 		E52A05941D0C57F600E64B88 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		E52A05971D0C58B400E64B88 /* BMIBMRRecord.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BMIBMRRecord.xcdatamodel; sourceTree = "<group>"; };
+		E547D0F12005FC4D00E54920 /* weightScale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weightScale.png; sourceTree = "<group>"; };
 		E56A07961D07F916009B8F32 /* BMIBMR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BMIBMR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E56A079A1D07F916009B8F32 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E56A07A31D07F916009B8F32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 		E5C24AFD2000C46D0037BB41 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E547D0F12005FC4D00E54920 /* weightScale.png */,
 				E5C24AFF2000C5140037BB41 /* backgroundImage.png */,
 			);
 			name = Resources;
@@ -242,6 +245,7 @@
 				E56A07A61D07F916009B8F32 /* Assets.xcassets in Resources */,
 				E5C24B002000C5140037BB41 /* backgroundImage.png in Resources */,
 				E56A07A41D07F916009B8F32 /* Main.storyboard in Resources */,
+				E547D0F22005FC4D00E54920 /* weightScale.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
