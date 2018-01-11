@@ -12,5 +12,8 @@
 #define DB_FILE_NAME                @"BMIBMRRecord.sqlite"
 #define OBJECT_MODEL_NAME           @"BMIBMRRecord.momd"
 #define DEFAULT_ENTITY_NAME         @"AllRecord"
+#define DEFAULT_ZERO_STRING         @"0.0"
+
+#define ADMOD_AD_ID                 @"ca-app-pub-3766057955642660/9386694236"
 
 #endif /* Constants_h */

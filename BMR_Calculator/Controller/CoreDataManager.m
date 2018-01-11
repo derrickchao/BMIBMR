@@ -24,6 +24,7 @@
 @implementation CoreDataManager
 
 + (instancetype)shareInstance {
+    
     static CoreDataManager *instance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -41,8 +42,8 @@
 
     newRecord = [NSEntityDescription insertNewObjectForEntityForName:DEFAULT_ENTITY_NAME inManagedObjectContext:self.managedObjectContext];
     
-    newRecord.bmiRecord = @([bmi doubleValue]);
-    newRecord.bmrRecord = @([bmr doubleValue]);
+    newRecord.bmiRecord = @([bmi floatValue]);
+    newRecord.bmrRecord = @([bmr floatValue]);
     newRecord.timeStamp = timestamp;
     
     return [self save];
@@ -98,7 +99,6 @@
     if (self.delegate && [self.delegate conformsToProtocol:@protocol(CoreDataManagerDelegate)] && [self.delegate respondsToSelector:@selector(willChangedContent)]) {
         [self.delegate willChangedContent];
     }
-    
 }
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
@@ -203,7 +203,7 @@
         // Replace this with code to handle the error appropriately.
         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
+//        abort();
     }
     
     return _persistentStoreCoordinator;
@@ -230,21 +230,14 @@
 - (BOOL)save {
     NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
     
-#ifdef DEBUG
-    NSLog(@"manageObjectContext: %@",managedObjectContext);
-    NSLog(@"is MainThread: %d",[[NSThread currentThread] isMainThread]);
-#endif
-    
     if (managedObjectContext != nil) {
         NSError *error = nil;
-#ifdef DEBUG
-        NSLog(@"newRecord: %@", newRecord);
-#endif
         if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
             // Replace this implementation with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
+//            abort();
+            return false;
         } else {
             return true;
         }

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface HistoryTableViewCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UILabel *bmiRecordLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bmrRecordLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeStampLabel;

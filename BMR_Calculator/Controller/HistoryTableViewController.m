@@ -23,10 +23,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-#ifdef DEBUG
-    NSLog(@"HistoryTableViewController viewDidLoad");
-#endif
-    
     dateFormater = [[NSDateFormatter alloc] init];
     [dateFormater setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     
@@ -35,7 +31,6 @@
     self.tableView.separatorInset = UIEdgeInsetsZero;
     UIView *view = [[UIView alloc] init];
     self.tableView.tableFooterView = view;
-
 }
 
 #pragma mark - Table view data source
@@ -47,6 +42,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     if ([[CoreDataManager shareInstance] totalRecords] == 0) {
+        // Set Tableview background View when no datas.
         self.tableView.backgroundView = self.noResultsView;
     } else {
         self.tableView.backgroundView = nil;
@@ -55,6 +51,9 @@
     return [[CoreDataManager shareInstance] totalRecords];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 80.0;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -63,8 +62,8 @@
     AllRecord *record = [[CoreDataManager shareInstance] getRecordByIndex:indexPath.row];
     NSString *timeStamp = [NSString stringWithFormat:@"%@", [dateFormater stringFromDate:record.timeStamp]];
     
-    cell.bmiRecordLabel.text = [NSString stringWithFormat:@"BMI: %@",record.bmiRecord];
-    cell.bmrRecordLabel.text = [NSString stringWithFormat:@"BMR: %@ cals/day",record.bmrRecord];
+    cell.bmiRecordLabel.text = [NSString stringWithFormat:@"BMI: %.1f",[record.bmiRecord floatValue]];
+    cell.bmrRecordLabel.text = [NSString stringWithFormat:@"BMR: %.f cals/day",[record.bmrRecord floatValue]];
     cell.timeStampLabel.text = timeStamp;
 
     return cell;
@@ -80,14 +79,12 @@
 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         AllRecord *recordToDelete = [[CoreDataManager shareInstance] getRecordByIndex:indexPath.row];
         [[CoreDataManager shareInstance] deleteRecord:recordToDelete];
-        
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }
 }
 
 #pragma mark - CoreDataManagerDelegate
@@ -113,6 +110,5 @@
 - (void)didChangedContent {
     [self.tableView endUpdates];
 }
-
 
 @end

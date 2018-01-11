@@ -10,8 +10,7 @@
 #import "AllRecord+CoreDataProperties.h"
 #import <GoogleMobileAds/GoogleMobileAds.h>
 #import "CoreDataManager.h"
-
-#define DEFAULT_ZERO_STRING     @"0.0"
+#import "Constants.h"
 
 @interface MainVC () <UITextFieldDelegate> {
     UITextField *activeTextField;
@@ -31,10 +30,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self configureGADBanner];
     [self setupTextFields];
 }
 
 #pragma mark - Private Methods
+
+- (void)configureGADBanner {
+    
+    self.gadBannerView.adUnitID = ADMOD_AD_ID;
+    self.gadBannerView.rootViewController = self;
+    [self.gadBannerView loadRequest:[GADRequest request]];
+}
 
 - (void)setupTextFields {
     
@@ -63,6 +70,7 @@
 }
 
 - (void)setDefault {
+    
     self.ageTextField.text = nil;
     self.heightTextField.text = nil;
     self.weightTextField.text = nil;
@@ -77,7 +85,7 @@
     
     NSInteger age = [self.ageTextField.text integerValue];
     NSInteger height = [self.heightTextField.text integerValue];
-    double weight = [self.weightTextField.text doubleValue];
+    float weight = [self.weightTextField.text floatValue];
     
     // Check input data is valid
     if (age == 0 || height == 0 || weight == 0) {
@@ -87,8 +95,8 @@
         [self presentViewController:alert animated:YES completion:nil];
     } else {
         
-        double bmrResult = 0.0;
-        double bmiResult = 0.0;
+        float bmrResult = 0.0;
+        float bmiResult = 0.0;
         
         if (self.genderSegmentControl.selectedSegmentIndex == 0) {
             // Male
@@ -98,7 +106,7 @@
             bmrResult = (9.6 * weight) + (1.8 * height) - (4.7 * age) + 655;
         }
         
-        double heightMeter = height / 100.0;
+        float heightMeter = height / 100.0;
         bmiResult = weight / (heightMeter * heightMeter);
         
         self.bmiResultLabel.text = [NSString stringWithFormat:@"%.1f", bmiResult];
@@ -107,7 +115,12 @@
 }
 
 - (IBAction)clearBtnPressed:(UIButton *)sender {
+
     [self setDefault];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"All Clear" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (IBAction)saveBtnPressed:(UIButton *)sender {

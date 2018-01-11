@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import <Firebase.h>
+#import <Crashlytics/Crashlytics.h>
+#import <Fabric/Fabric.h>
 
 @interface AppDelegate ()
 
@@ -19,8 +21,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"backgroundImage.png"] forBarMetrics:UIBarMetricsDefault];
+    [Fabric with:@[[Crashlytics class]]];
     [FIRApp configure];
+    
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"backgroundImage.png"] forBarMetrics:UIBarMetricsDefault];
     
     return YES;
 }
