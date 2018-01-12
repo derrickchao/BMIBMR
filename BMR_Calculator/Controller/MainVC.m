@@ -69,6 +69,21 @@
     self.weightTextField.inputAccessoryView = toolBar;
 }
 
+- (void)alertTitle:(NSString *)title
+           message:(NSString *)message
+actionCompletionHandler:(void (^)(void))completionHandler {
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        if (completionHandler != nil) {
+            completionHandler();
+        }
+    }];
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 - (void)setDefault {
     
     self.ageTextField.text = nil;
@@ -88,11 +103,10 @@
     float weight = [self.weightTextField.text floatValue];
     
     // Check input data is valid
-    if (age == 0 || height == 0 || weight == 0) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Input data Invalid!" message:@"Please input a correct number" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-        [alert addAction:ok];
-        [self presentViewController:alert animated:YES completion:nil];
+    if (age == 0 || age > MAXIMUM_AGE || height == 0 || height > MAXIMUM_HEIGHT || weight == 0 || weight > MAXIMUM_WEIGHT) {
+        
+        [self alertTitle:@"Input data Invalid!" message:@"Please input a correct number" actionCompletionHandler:nil];
+        
     } else {
         
         float bmrResult = 0.0;
@@ -117,31 +131,23 @@
 - (IBAction)clearBtnPressed:(UIButton *)sender {
 
     [self setDefault];
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"All Clear" message:nil preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-    [alert addAction:ok];
-    [self presentViewController:alert animated:YES completion:nil];
+    [self alertTitle:@"All Clear" message:nil actionCompletionHandler:nil];
 }
 
 - (IBAction)saveBtnPressed:(UIButton *)sender {
     
     if ([self.bmiResultLabel.text isEqualToString:DEFAULT_ZERO_STRING]) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error!" message:@"No Data to Save" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-        [alert addAction:ok];
-        [self presentViewController:alert animated:YES completion:nil];
+
+        [self alertTitle:@"Error!" message:@"No Data to Save" actionCompletionHandler:nil];
+
     } else {
         
         // Create a newItem for every record.
         [[CoreDataManager shareInstance] createNewRecordWithBMI:self.bmiResultLabel.text bmr:self.bmrResultLabel.text timeStamp:[NSDate date]];
         
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"Save successful" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self alertTitle:nil message:@"Save successful" actionCompletionHandler:^{
             [self setDefault];
         }];
-        
-        [alert addAction:ok];
-        [self presentViewController:alert animated:true completion:nil];
     }
 }
 

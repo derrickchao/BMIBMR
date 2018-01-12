@@ -16,4 +16,8 @@
 
 #define ADMOD_AD_ID                 @"ca-app-pub-3766057955642660/9386694236"
 
+#define MAXIMUM_AGE                 150
+#define MAXIMUM_HEIGHT              300
+#define MAXIMUM_WEIGHT              800
+
 #endif /* Constants_h */
