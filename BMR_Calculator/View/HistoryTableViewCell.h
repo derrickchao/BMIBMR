@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "AllRecord.h"
 @interface HistoryTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *bmiRecordLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bmrRecordLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeStampLabel;
+
+- (void)configureCell:(AllRecord *)record;
 
 @end

@@ -10,6 +10,7 @@
 #import <Firebase.h>
 #import <Crashlytics/Crashlytics.h>
 #import <Fabric/Fabric.h>
+#import "Constants.h"
 
 @interface AppDelegate ()
 
@@ -25,6 +26,11 @@
     [FIRApp configure];
     
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"backgroundImage.png"] forBarMetrics:UIBarMetricsDefault];
+    
+    // Default Unit
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:UNIT_KEY]) {
+        [[NSUserDefaults standardUserDefaults] setObject:IMPERIAL_UNIT forKey:UNIT_KEY];
+    }
     
     return YES;
 }

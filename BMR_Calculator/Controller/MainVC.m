@@ -11,17 +11,25 @@
 #import <GoogleMobileAds/GoogleMobileAds.h>
 #import "CoreDataManager.h"
 #import "Constants.h"
+#import "BodyResult.h"
+#import "BMIStatusTableVC.h"
 
 @interface MainVC () <UITextFieldDelegate> {
     UITextField *activeTextField;
 }
+
 @property (weak, nonatomic) IBOutlet UISegmentedControl *genderSegmentControl;
 @property (weak, nonatomic) IBOutlet UITextField *ageTextField;
-@property (weak, nonatomic) IBOutlet UITextField *heightTextField;
+@property (weak, nonatomic) IBOutlet UITextField *inchTextField;
 @property (weak, nonatomic) IBOutlet UITextField *weightTextField;
 @property (weak, nonatomic) IBOutlet UILabel *bmiResultLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bmrResultLabel;
+@property (weak, nonatomic) IBOutlet UIView *heightContainerView;
 @property (weak, nonatomic) IBOutlet GADBannerView *gadBannerView;
+@property (weak, nonatomic) IBOutlet UITextField *feetTextField;
+@property (nonatomic, strong) UITextField *cmTextField;
+@property (nonatomic, strong) BMIStatusTableVC *bmiStatusTableVC;
+@property (weak, nonatomic) IBOutlet UILabel *suggestWeightResultLabel;
 
 @end
 
@@ -32,6 +40,45 @@
     
     [self configureGADBanner];
     [self setupTextFields];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(unitDidChanged:) name:kUnitDidChangeNotification object:nil];
+    
+    if (![self isImperialUnit]) {
+        [self setupCMTextField];
+        self.feetTextField.hidden = true;
+        self.inchTextField.hidden = true;
+        self.weightTextField.placeholder = @"kg";
+    } else {
+        
+    }
+}
+
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"BMIStatusTableVC"]) {
+        self.bmiStatusTableVC = (BMIStatusTableVC *)segue.destinationViewController;
+    }
+}
+
+#pragma mark - Property
+
+- (UITextField *)cmTextField {
+    
+    if (!_cmTextField) {
+        _cmTextField = [[UITextField alloc] init];
+        _cmTextField.translatesAutoresizingMaskIntoConstraints = false;
+        _cmTextField.placeholder = @"cm";
+        _cmTextField.textAlignment = NSTextAlignmentCenter;
+        _cmTextField.borderStyle = UITextBorderStyleRoundedRect;
+        _cmTextField.delegate = self;
+        _cmTextField.font = [UIFont fontWithName:@"AvenirNext-Bold" size:18.0];
+        _cmTextField.keyboardType = UIKeyboardTypeNumberPad;
+        _cmTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    }
+    
+    return _cmTextField;
 }
 
 #pragma mark - Private Methods
@@ -43,18 +90,58 @@
     [self.gadBannerView loadRequest:[GADRequest request]];
 }
 
+- (BOOL)isImperialUnit {
+    return [[[NSUserDefaults standardUserDefaults] objectForKey:UNIT_KEY] isEqualToString:IMPERIAL_UNIT];
+}
+
+- (void)setupCMTextField {
+    
+    [self.heightContainerView addSubview:self.cmTextField];
+    [self.heightContainerView addConstraint:[NSLayoutConstraint constraintWithItem:self.cmTextField
+                                                                         attribute:NSLayoutAttributeRight
+                                                                         relatedBy:NSLayoutRelationEqual
+                                                                            toItem:self.heightContainerView
+                                                                         attribute:NSLayoutAttributeRight
+                                                                        multiplier:1.0
+                                                                          constant:0.0]];
+    [self.heightContainerView addConstraint:[NSLayoutConstraint constraintWithItem:self.cmTextField
+                                                                         attribute:NSLayoutAttributeWidth
+                                                                         relatedBy:NSLayoutRelationEqual
+                                                                            toItem:self.heightContainerView
+                                                                         attribute:NSLayoutAttributeWidth
+                                                                        multiplier:0.5
+                                                                          constant:0.0]];
+    [self.heightContainerView addConstraint:[NSLayoutConstraint constraintWithItem:self.cmTextField
+                                                                         attribute:NSLayoutAttributeCenterY
+                                                                         relatedBy:NSLayoutRelationEqual
+                                                                            toItem:self.heightContainerView
+                                                                         attribute:NSLayoutAttributeCenterY
+                                                                        multiplier:1.0
+                                                                          constant:3.0]];
+    [self.heightContainerView addConstraint:[NSLayoutConstraint constraintWithItem:self.cmTextField
+                                                                         attribute:NSLayoutAttributeHeight
+                                                                         relatedBy:NSLayoutRelationEqual
+                                                                            toItem:self.heightContainerView
+                                                                         attribute:NSLayoutAttributeHeight
+                                                                        multiplier:0.7
+                                                                          constant:0.0]];
+}
+
 - (void)setupTextFields {
     
     self.ageTextField.delegate = self;
-    self.heightTextField.delegate = self;
+    self.feetTextField.delegate = self;
+    self.inchTextField.delegate = self;
     self.weightTextField.delegate = self;
     
     self.ageTextField.keyboardType = UIKeyboardTypeNumberPad;
-    self.heightTextField.keyboardType = UIKeyboardTypeNumberPad;
+    self.feetTextField.keyboardType = UIKeyboardTypeNumberPad;
+    self.inchTextField.keyboardType = UIKeyboardTypeDecimalPad;
     self.weightTextField.keyboardType = UIKeyboardTypeDecimalPad;
     
     self.ageTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    self.heightTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    self.feetTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    self.inchTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
     self.weightTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
     
     // Create a Toolbar for TextFields
@@ -65,8 +152,10 @@
     [toolBar setItems:@[cancelBarBtn, flexibleSpaceBarBtn, doneBarBtn]];
     
     self.ageTextField.inputAccessoryView = toolBar;
-    self.heightTextField.inputAccessoryView = toolBar;
+    self.feetTextField.inputAccessoryView = toolBar;
+    self.inchTextField.inputAccessoryView = toolBar;
     self.weightTextField.inputAccessoryView = toolBar;
+    self.cmTextField.inputAccessoryView = toolBar;
 }
 
 - (void)alertTitle:(NSString *)title
@@ -86,45 +175,101 @@ actionCompletionHandler:(void (^)(void))completionHandler {
 
 - (void)setDefault {
     
+    self.bmiStatusTableVC.bodyResult = nil;
+    [self.bmiStatusTableVC.tableView reloadData];
+    
     self.ageTextField.text = nil;
-    self.heightTextField.text = nil;
+    self.feetTextField.text = nil;
+    self.inchTextField.text = nil;
+    self.cmTextField.text = nil;
     self.weightTextField.text = nil;
+    self.suggestWeightResultLabel.text = nil;
     self.bmiResultLabel.text = DEFAULT_ZERO_STRING;
     self.bmrResultLabel.text = DEFAULT_ZERO_STRING;
     self.genderSegmentControl.selectedSegmentIndex = 0;
+}
+
+#pragma mark - Notification
+
+- (void)unitDidChanged:(NSNotification *)notification {
+    
+    if ([self isImperialUnit]) {
+        self.cmTextField.hidden = true;
+        self.weightTextField.placeholder = @"lb";
+        self.feetTextField.hidden = false;
+        self.inchTextField.hidden = false;
+    } else {
+        [self setupCMTextField];
+        self.cmTextField.hidden = false;
+        self.feetTextField.hidden = true;
+        self.inchTextField.hidden = true;
+        self.weightTextField.placeholder = @"kg";
+    }
+    
+    [self setDefault];
 }
 
 #pragma mark - Action Methods
 
 - (IBAction)calculateBtnPressed:(UIButton *)sender {
     
-    NSInteger age = [self.ageTextField.text integerValue];
-    NSInteger height = [self.heightTextField.text integerValue];
-    float weight = [self.weightTextField.text floatValue];
-    
-    // Check input data is valid
-    if (age == 0 || age > MAXIMUM_AGE || height == 0 || height > MAXIMUM_HEIGHT || weight == 0 || weight > MAXIMUM_WEIGHT) {
+    NSUInteger age = [self.ageTextField.text integerValue];
+    if ([self isImperialUnit]) {
         
-        [self alertTitle:@"Input data Invalid!" message:@"Please input a correct number" actionCompletionHandler:nil];
+        NSUInteger feet = [self.feetTextField.text integerValue];
+        float inch = [self.inchTextField.text floatValue];
+        float weight = [self.weightTextField.text floatValue];
         
+        if (age == 0 || age > MAXIMUM_AGE || weight == 0.0 || weight > MAXIMUM_HEIGHT_POUND || feet > MAXIMUM_HEIGHT_FEET || inch > MAXIMUM_HEIGHT_INCH || (feet == 0 && inch == 0.0)) {
+            
+            [self alertTitle:@"Input data Invalid!" message:@"Please input a correct number" actionCompletionHandler:nil];
+        } else {
+            
+            BodyResult *bodyResult = nil;
+        
+            if (self.genderSegmentControl.selectedSegmentIndex == 0) {
+                // Male
+                bodyResult = [[BodyResult alloc] initWithGender:GENDER_MALE age:age heightForFeet:feet heightForInches:inch weightForLbs:weight];
+            } else {
+                // Female
+                bodyResult = [[BodyResult alloc] initWithGender:GENDER_FEMALE age:age heightForFeet:feet heightForInches:inch weightForLbs:weight];
+            }
+            
+            self.bmiResultLabel.text = [NSString stringWithFormat:@"%.1f", bodyResult.bmiValue];
+            self.bmrResultLabel.text = [NSString stringWithFormat:@"%.1f", bodyResult.bmrValue];
+            self.suggestWeightResultLabel.text = [NSString stringWithFormat:@"%.1f~%.1f lbs", bodyResult.suggestLowerWeight, bodyResult.suggestUpperWeight];
+            
+            self.bmiStatusTableVC.bodyResult = bodyResult;
+            [self.bmiStatusTableVC.tableView reloadData];
+        }
     } else {
         
-        float bmrResult = 0.0;
-        float bmiResult = 0.0;
+        NSUInteger cm = [self.cmTextField.text integerValue];
+        float weight = [self.weightTextField.text floatValue];
         
-        if (self.genderSegmentControl.selectedSegmentIndex == 0) {
-            // Male
-            bmrResult = (13.7 * weight) + (5.0 * height) - (6.8 * age) + 66;
+        // Check input data is valid
+        if (age == 0 || age > MAXIMUM_AGE || cm == 0 || cm > MAXIMUM_HEIGHT_CM || weight == 0 || weight > MAXIMUM_WEIGHT_KG) {
+            
+            [self alertTitle:@"Input data Invalid!" message:@"Please input a correct number" actionCompletionHandler:nil];
+            
         } else {
-            // Female
-            bmrResult = (9.6 * weight) + (1.8 * height) - (4.7 * age) + 655;
+            
+            BodyResult *bodyResult = nil;
+            if (self.genderSegmentControl.selectedSegmentIndex == 0) {
+                // Male
+                bodyResult = [[BodyResult alloc] initWithGender:GENDER_MALE age:age heightForCM:cm weightForKg:weight];
+            } else {
+                // Female
+                bodyResult = [[BodyResult alloc] initWithGender:GENDER_FEMALE age:age heightForCM:cm weightForKg:weight];
+            }
+            
+            self.bmiResultLabel.text = [NSString stringWithFormat:@"%.1f", bodyResult.bmiValue];
+            self.bmrResultLabel.text = [NSString stringWithFormat:@"%.1f", bodyResult.bmrValue];
+            self.suggestWeightResultLabel.text = [NSString stringWithFormat:@"%.1f~%.1f kg", bodyResult.suggestLowerWeight, bodyResult.suggestUpperWeight];
+            
+            self.bmiStatusTableVC.bodyResult = bodyResult;
+            [self.bmiStatusTableVC.tableView reloadData];
         }
-        
-        float heightMeter = height / 100.0;
-        bmiResult = weight / (heightMeter * heightMeter);
-        
-        self.bmiResultLabel.text = [NSString stringWithFormat:@"%.1f", bmiResult];
-        self.bmrResultLabel.text = [NSString stringWithFormat:@"%.1f", bmrResult];
     }
 }
 

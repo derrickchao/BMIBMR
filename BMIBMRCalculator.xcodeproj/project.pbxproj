@@ -16,6 +16,10 @@
 		E56A07A41D07F916009B8F32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E56A07A21D07F916009B8F32 /* Main.storyboard */; };
 		E56A07A61D07F916009B8F32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E56A07A51D07F916009B8F32 /* Assets.xcassets */; };
 		E56A07A91D07F916009B8F32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E56A07A71D07F916009B8F32 /* LaunchScreen.storyboard */; };
+		E5B75CFC2010F4E500FF8978 /* SettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B75CFB2010F4E500FF8978 /* SettingsVC.m */; };
+		E5B75D07201242AB00FF8978 /* BodyResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B75D06201242AB00FF8978 /* BodyResult.m */; };
+		E5B75D0A2013204A00FF8978 /* BMIStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B75D092013204A00FF8978 /* BMIStatusCell.m */; };
+		E5B75D0D201379D400FF8978 /* BMIStatusTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B75D0C201379D400FF8978 /* BMIStatusTableVC.m */; };
 		E5C24B002000C5140037BB41 /* backgroundImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E5C24AFF2000C5140037BB41 /* backgroundImage.png */; };
 		E5C24B052000C51B0037BB41 /* AllRecord+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C24B012000C51B0037BB41 /* AllRecord+CoreDataProperties.m */; };
 		E5C24B062000C51B0037BB41 /* AllRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C24B032000C51B0037BB41 /* AllRecord.m */; };
@@ -42,6 +46,14 @@
 		E56A07A51D07F916009B8F32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E56A07A81D07F916009B8F32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E56A07AA1D07F916009B8F32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5B75CFA2010F4E500FF8978 /* SettingsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SettingsVC.h; path = Controller/SettingsVC.h; sourceTree = "<group>"; };
+		E5B75CFB2010F4E500FF8978 /* SettingsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SettingsVC.m; path = Controller/SettingsVC.m; sourceTree = "<group>"; };
+		E5B75D05201242AB00FF8978 /* BodyResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BodyResult.h; sourceTree = "<group>"; };
+		E5B75D06201242AB00FF8978 /* BodyResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BodyResult.m; sourceTree = "<group>"; };
+		E5B75D082013204A00FF8978 /* BMIStatusCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMIStatusCell.h; sourceTree = "<group>"; };
+		E5B75D092013204A00FF8978 /* BMIStatusCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMIStatusCell.m; sourceTree = "<group>"; };
+		E5B75D0B201379D400FF8978 /* BMIStatusTableVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BMIStatusTableVC.h; path = Controller/BMIStatusTableVC.h; sourceTree = "<group>"; };
+		E5B75D0C201379D400FF8978 /* BMIStatusTableVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = BMIStatusTableVC.m; path = Controller/BMIStatusTableVC.m; sourceTree = "<group>"; };
 		E5C24AFF2000C5140037BB41 /* backgroundImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backgroundImage.png; path = Resources/backgroundImage.png; sourceTree = "<group>"; };
 		E5C24B012000C51B0037BB41 /* AllRecord+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AllRecord+CoreDataProperties.m"; sourceTree = "<group>"; };
 		E5C24B022000C51B0037BB41 /* AllRecord+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AllRecord+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -57,7 +69,7 @@
 		E5C24B172000CD4B0037BB41 /* MainVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MainVC.m; path = Controller/MainVC.m; sourceTree = "<group>"; };
 		E5C24BA120020BDD0037BB41 /* CoreDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CoreDataManager.h; path = Controller/CoreDataManager.h; sourceTree = "<group>"; };
 		E5C24BA220020BDD0037BB41 /* CoreDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CoreDataManager.m; path = Controller/CoreDataManager.m; sourceTree = "<group>"; };
-		E5C24BA420020DA70037BB41 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Controller/Constants.h; sourceTree = "<group>"; };
+		E5C24BA420020DA70037BB41 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		E5F63EB41D0E978E0042CD19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,6 +126,7 @@
 		E56A07981D07F916009B8F32 /* BMIBMR_Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				E5B75CFE20118D7900FF8978 /* Utils */,
 				E5C24AFD2000C46D0037BB41 /* Resources */,
 				E5C24AFC2000C4680037BB41 /* Model */,
 				E5C24AFB2000C45A0037BB41 /* View */,
@@ -137,6 +150,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E5B75CFE20118D7900FF8978 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E5C24BA420020DA70037BB41 /* Constants.h */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		E5C24AF92000C4460037BB41 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,7 +169,10 @@
 				E5C24B172000CD4B0037BB41 /* MainVC.m */,
 				E5C24BA120020BDD0037BB41 /* CoreDataManager.h */,
 				E5C24BA220020BDD0037BB41 /* CoreDataManager.m */,
-				E5C24BA420020DA70037BB41 /* Constants.h */,
+				E5B75CFA2010F4E500FF8978 /* SettingsVC.h */,
+				E5B75CFB2010F4E500FF8978 /* SettingsVC.m */,
+				E5B75D0B201379D400FF8978 /* BMIStatusTableVC.h */,
+				E5B75D0C201379D400FF8978 /* BMIStatusTableVC.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -160,6 +184,8 @@
 				E5C24B072000C5210037BB41 /* HistoryTableViewCell.m */,
 				E547D0F32007045E00E54920 /* FancyButton.h */,
 				E547D0F42007045E00E54920 /* FancyButton.m */,
+				E5B75D082013204A00FF8978 /* BMIStatusCell.h */,
+				E5B75D092013204A00FF8978 /* BMIStatusCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -171,6 +197,8 @@
 				E5C24B032000C51B0037BB41 /* AllRecord.m */,
 				E5C24B022000C51B0037BB41 /* AllRecord+CoreDataProperties.h */,
 				E5C24B012000C51B0037BB41 /* AllRecord+CoreDataProperties.m */,
+				E5B75D05201242AB00FF8978 /* BodyResult.h */,
+				E5B75D06201242AB00FF8978 /* BodyResult.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -327,6 +355,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5C24B132000C52A0037BB41 /* HistoryTableViewController.m in Sources */,
+				E5B75CFC2010F4E500FF8978 /* SettingsVC.m in Sources */,
+				E5B75D0A2013204A00FF8978 /* BMIStatusCell.m in Sources */,
 				E547D0F52007045E00E54920 /* FancyButton.m in Sources */,
 				E5C24B182000CD4B0037BB41 /* MainVC.m in Sources */,
 				E5C24B052000C51B0037BB41 /* AllRecord+CoreDataProperties.m in Sources */,
@@ -336,6 +366,8 @@
 				E52A05981D0C58B400E64B88 /* BMIBMRRecord.xcdatamodeld in Sources */,
 				E56A079B1D07F916009B8F32 /* main.m in Sources */,
 				E5C24B122000C52A0037BB41 /* AppDelegate.m in Sources */,
+				E5B75D0D201379D400FF8978 /* BMIStatusTableVC.m in Sources */,
+				E5B75D07201242AB00FF8978 /* BodyResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

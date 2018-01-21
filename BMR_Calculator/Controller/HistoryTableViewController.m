@@ -60,16 +60,10 @@
     HistoryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"historyCell" forIndexPath:indexPath];
     
     AllRecord *record = [[CoreDataManager shareInstance] getRecordByIndex:indexPath.row];
-    NSString *timeStamp = [NSString stringWithFormat:@"%@", [dateFormater stringFromDate:record.timeStamp]];
-    
-    cell.bmiRecordLabel.text = [NSString stringWithFormat:@"BMI: %.1f",[record.bmiRecord floatValue]];
-    cell.bmrRecordLabel.text = [NSString stringWithFormat:@"BMR: %.f cals/day",[record.bmrRecord floatValue]];
-    cell.timeStampLabel.text = timeStamp;
+    [cell configureCell:record];
 
     return cell;
 }
-
-
 
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
