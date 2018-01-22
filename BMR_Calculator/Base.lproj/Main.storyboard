@@ -583,15 +583,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.1176470588" green="0.098039215690000001" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="historyCell" rowHeight="80" id="20O-Ir-rbq" customClass="HistoryTableViewCell">
-                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="historyCell" rowHeight="100" id="20O-Ir-rbq" customClass="HistoryTableViewCell">
+                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="20O-Ir-rbq" id="CZz-58-a24">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ix5-x2-NUs">
-                                            <rect key="frame" x="325" y="51" width="34" height="18"/>
+                                            <rect key="frame" x="325" y="71" width="34" height="18"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -599,22 +599,31 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BMR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="bnn-fP-9Cv">
                                             <rect key="frame" x="134" y="11.5" width="225" height="26.5"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="22"/>
-                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="textColor" red="0.7843137255" green="0.7843137255" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BMI" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="Ijh-Ud-VqN">
                                             <rect key="frame" x="16" y="11" width="105" height="26.5"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="22"/>
-                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="textColor" red="0.7843137255" green="0.7843137255" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="9LV-HA-cSf">
+                                            <rect key="frame" x="16" y="45" width="299" height="26.5"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="22"/>
+                                            <color key="textColor" red="0.7843137255" green="0.7843137255" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="ix5-x2-NUs" firstAttribute="trailing" secondItem="CZz-58-a24" secondAttribute="trailingMargin" id="19m-ac-qys"/>
+                                        <constraint firstItem="9LV-HA-cSf" firstAttribute="top" secondItem="Ijh-Ud-VqN" secondAttribute="bottom" constant="7.5" id="2O3-Ps-yDo"/>
                                         <constraint firstItem="bnn-fP-9Cv" firstAttribute="width" secondItem="CZz-58-a24" secondAttribute="width" multiplier="0.6" id="8Zi-nV-HiO"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="ix5-x2-NUs" secondAttribute="bottom" id="ArI-Om-Cnt"/>
                                         <constraint firstItem="bnn-fP-9Cv" firstAttribute="centerY" secondItem="Ijh-Ud-VqN" secondAttribute="centerY" id="KAt-oO-MRi"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="bnn-fP-9Cv" secondAttribute="trailing" id="Mlq-qo-W9H"/>
+                                        <constraint firstAttribute="trailing" secondItem="9LV-HA-cSf" secondAttribute="trailing" constant="60" id="fXW-Ww-QRA"/>
+                                        <constraint firstItem="9LV-HA-cSf" firstAttribute="leading" secondItem="CZz-58-a24" secondAttribute="leadingMargin" id="ihp-9j-fOf"/>
                                         <constraint firstItem="Ijh-Ud-VqN" firstAttribute="top" secondItem="CZz-58-a24" secondAttribute="topMargin" id="my6-3B-Iuu"/>
                                         <constraint firstItem="Ijh-Ud-VqN" firstAttribute="width" secondItem="CZz-58-a24" secondAttribute="width" multiplier="0.28" id="v9M-Hc-kAY"/>
                                         <constraint firstItem="Ijh-Ud-VqN" firstAttribute="leading" secondItem="CZz-58-a24" secondAttribute="leadingMargin" id="xIo-kM-HEh"/>
@@ -624,6 +633,7 @@
                                 <connections>
                                     <outlet property="bmiRecordLabel" destination="Ijh-Ud-VqN" id="qNC-Ug-v5K"/>
                                     <outlet property="bmrRecordLabel" destination="bnn-fP-9Cv" id="WeW-K3-eDI"/>
+                                    <outlet property="bodyStatusLabel" destination="9LV-HA-cSf" id="YTA-J9-ePv"/>
                                     <outlet property="timeStampLabel" destination="ix5-x2-NUs" id="4Ni-UA-qUK"/>
                                 </connections>
                             </tableViewCell>

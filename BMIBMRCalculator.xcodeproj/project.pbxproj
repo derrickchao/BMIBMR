@@ -46,6 +46,7 @@
 		E56A07A51D07F916009B8F32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E56A07A81D07F916009B8F32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E56A07AA1D07F916009B8F32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E57A38A42014C86400E41F7D /* BMIBMRRecord v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "BMIBMRRecord v2.xcdatamodel"; sourceTree = "<group>"; };
 		E5B75CFA2010F4E500FF8978 /* SettingsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SettingsVC.h; path = Controller/SettingsVC.h; sourceTree = "<group>"; };
 		E5B75CFB2010F4E500FF8978 /* SettingsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SettingsVC.m; path = Controller/SettingsVC.m; sourceTree = "<group>"; };
 		E5B75D05201242AB00FF8978 /* BodyResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BodyResult.h; sourceTree = "<group>"; };
@@ -555,9 +556,10 @@
 		E52A05961D0C58B400E64B88 /* BMIBMRRecord.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				E57A38A42014C86400E41F7D /* BMIBMRRecord v2.xcdatamodel */,
 				E52A05971D0C58B400E64B88 /* BMIBMRRecord.xcdatamodel */,
 			);
-			currentVersion = E52A05971D0C58B400E64B88 /* BMIBMRRecord.xcdatamodel */;
+			currentVersion = E57A38A42014C86400E41F7D /* BMIBMRRecord v2.xcdatamodel */;
 			name = BMIBMRRecord.xcdatamodeld;
 			path = BMR_Calculator/BMIBMRRecord.xcdatamodeld;
 			sourceTree = "<group>";

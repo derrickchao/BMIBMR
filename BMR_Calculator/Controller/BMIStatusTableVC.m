@@ -34,6 +34,10 @@
     return [BMI_STATUS_ARRAY count];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 40.0;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     BMIStatusCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BMIStatusCell" forIndexPath:indexPath];
     

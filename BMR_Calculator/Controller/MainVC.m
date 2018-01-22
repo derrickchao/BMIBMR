@@ -16,6 +16,7 @@
 
 @interface MainVC () <UITextFieldDelegate> {
     UITextField *activeTextField;
+    BodyResult *_bodyResult;
 }
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *genderSegmentControl;
@@ -213,6 +214,7 @@ actionCompletionHandler:(void (^)(void))completionHandler {
 
 - (IBAction)calculateBtnPressed:(UIButton *)sender {
     
+    _bodyResult = nil;
     NSUInteger age = [self.ageTextField.text integerValue];
     if ([self isImperialUnit]) {
         
@@ -225,21 +227,19 @@ actionCompletionHandler:(void (^)(void))completionHandler {
             [self alertTitle:@"Input data Invalid!" message:@"Please input a correct number" actionCompletionHandler:nil];
         } else {
             
-            BodyResult *bodyResult = nil;
-        
             if (self.genderSegmentControl.selectedSegmentIndex == 0) {
                 // Male
-                bodyResult = [[BodyResult alloc] initWithGender:GENDER_MALE age:age heightForFeet:feet heightForInches:inch weightForLbs:weight];
+                _bodyResult = [[BodyResult alloc] initWithGender:GENDER_MALE age:age heightForFeet:feet heightForInches:inch weightForLbs:weight];
             } else {
                 // Female
-                bodyResult = [[BodyResult alloc] initWithGender:GENDER_FEMALE age:age heightForFeet:feet heightForInches:inch weightForLbs:weight];
+                _bodyResult = [[BodyResult alloc] initWithGender:GENDER_FEMALE age:age heightForFeet:feet heightForInches:inch weightForLbs:weight];
             }
             
-            self.bmiResultLabel.text = [NSString stringWithFormat:@"%.1f", bodyResult.bmiValue];
-            self.bmrResultLabel.text = [NSString stringWithFormat:@"%.1f", bodyResult.bmrValue];
-            self.suggestWeightResultLabel.text = [NSString stringWithFormat:@"%.1f~%.1f lbs", bodyResult.suggestLowerWeight, bodyResult.suggestUpperWeight];
+            self.bmiResultLabel.text = [NSString stringWithFormat:@"%.1f", _bodyResult.bmiValue];
+            self.bmrResultLabel.text = [NSString stringWithFormat:@"%.1f", _bodyResult.bmrValue];
+            self.suggestWeightResultLabel.text = [NSString stringWithFormat:@"%.1f~%.1f lbs", _bodyResult.suggestLowerWeight, _bodyResult.suggestUpperWeight];
             
-            self.bmiStatusTableVC.bodyResult = bodyResult;
+            self.bmiStatusTableVC.bodyResult = _bodyResult;
             [self.bmiStatusTableVC.tableView reloadData];
         }
     } else {
@@ -254,20 +254,19 @@ actionCompletionHandler:(void (^)(void))completionHandler {
             
         } else {
             
-            BodyResult *bodyResult = nil;
             if (self.genderSegmentControl.selectedSegmentIndex == 0) {
                 // Male
-                bodyResult = [[BodyResult alloc] initWithGender:GENDER_MALE age:age heightForCM:cm weightForKg:weight];
+                _bodyResult = [[BodyResult alloc] initWithGender:GENDER_MALE age:age heightForCM:cm weightForKg:weight];
             } else {
                 // Female
-                bodyResult = [[BodyResult alloc] initWithGender:GENDER_FEMALE age:age heightForCM:cm weightForKg:weight];
+                _bodyResult = [[BodyResult alloc] initWithGender:GENDER_FEMALE age:age heightForCM:cm weightForKg:weight];
             }
             
-            self.bmiResultLabel.text = [NSString stringWithFormat:@"%.1f", bodyResult.bmiValue];
-            self.bmrResultLabel.text = [NSString stringWithFormat:@"%.1f", bodyResult.bmrValue];
-            self.suggestWeightResultLabel.text = [NSString stringWithFormat:@"%.1f~%.1f kg", bodyResult.suggestLowerWeight, bodyResult.suggestUpperWeight];
+            self.bmiResultLabel.text = [NSString stringWithFormat:@"%.1f", _bodyResult.bmiValue];
+            self.bmrResultLabel.text = [NSString stringWithFormat:@"%.1f", _bodyResult.bmrValue];
+            self.suggestWeightResultLabel.text = [NSString stringWithFormat:@"%.1f~%.1f kg", _bodyResult.suggestLowerWeight, _bodyResult.suggestUpperWeight];
             
-            self.bmiStatusTableVC.bodyResult = bodyResult;
+            self.bmiStatusTableVC.bodyResult = _bodyResult;
             [self.bmiStatusTableVC.tableView reloadData];
         }
     }
@@ -288,7 +287,8 @@ actionCompletionHandler:(void (^)(void))completionHandler {
     } else {
         
         // Create a newItem for every record.
-        [[CoreDataManager shareInstance] createNewRecordWithBMI:self.bmiResultLabel.text bmr:self.bmrResultLabel.text timeStamp:[NSDate date]];
+//        [[CoreDataManager shareInstance] createNewRecordWithBMI:self.bmiResultLabel.text bmr:self.bmrResultLabel.text timeStamp:[NSDate date]];
+        [[CoreDataManager shareInstance] createNewRecord:_bodyResult];
         
         [self alertTitle:nil message:@"Save successful" actionCompletionHandler:^{
             [self setDefault];

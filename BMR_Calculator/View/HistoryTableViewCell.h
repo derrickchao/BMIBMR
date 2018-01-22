@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *bmiRecordLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bmrRecordLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeStampLabel;
+@property (weak, nonatomic) IBOutlet UILabel *bodyStatusLabel;
 
 - (void)configureCell:(AllRecord *)record;
 

@@ -17,4 +17,15 @@
 @dynamic bmrRecord;
 @dynamic timeStamp;
 
+@dynamic age;
+@dynamic heightInCm;
+@dynamic heightInFeet;
+@dynamic heightInInch;
+@dynamic weightInKg;
+@dynamic weightInLb;
+@dynamic suggestLowerWeight;
+@dynamic suggestUpperWeight;
+@dynamic gender;
+@dynamic bodyStatus;
+
 @end

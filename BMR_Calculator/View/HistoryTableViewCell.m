@@ -30,6 +30,7 @@
     self.bmiRecordLabel.text = [NSString stringWithFormat:@"BMI: %.1f",[record.bmiRecord floatValue]];
     self.bmrRecordLabel.text = [NSString stringWithFormat:@"BMR: %.f cals/day",[record.bmrRecord floatValue]];
     self.timeStampLabel.text = [HistoryTableViewCell createTimestamp:record.timeStamp];
+    self.bodyStatusLabel.text = [NSString stringWithFormat:@"Status: %@",record.bodyStatus];
     
 }
 

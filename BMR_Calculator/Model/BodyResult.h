@@ -13,24 +13,21 @@ typedef NS_ENUM(NSUInteger, GENDER) {
     GENDER_FEMALE
 };
 
-//typedef NS_ENUM(NSUInteger, BODY_STATUS) {
-//    BODY_STATUS_VERY_SEVERELY_UNDERWEIGHT = 0,
-//    BODY_STATUS_SEVERELY_UNDERWEIGHT ,
-//    BODY_STATUS_UNDERWEIGHT,
-//    BODY_STATUS_NORMAL_WEIGHT,
-//    BODY_STATUS_OVER_WEIGHT,
-//    BODY_STATUS_OBESE_CLASS_I,
-//    BODY_STATUS_OBESE_CLASS_II,
-//    BODY_STATUS_OBESE_CLASS_III
-//};
-
 @interface BodyResult : NSObject
 
-@property (nonatomic, assign) float bmrValue;
-@property (nonatomic, assign) float bmiValue;
-@property (nonatomic, assign) float suggestUpperWeight;
-@property (nonatomic, assign) float suggestLowerWeight;
-@property (nonatomic, copy) NSString *bodyStatus;
+@property (nonatomic, assign, readonly) NSUInteger age;
+@property (nonatomic, assign, readonly) NSUInteger heightInCm;
+@property (nonatomic, assign, readonly) NSUInteger heightInFeet;
+@property (nonatomic, assign, readonly) float heightInInch;
+@property (nonatomic, assign, readonly) float weightInKg;
+@property (nonatomic, assign, readonly) float weightInLb;
+@property (nonatomic, copy, readonly) NSString *gender;
+
+@property (nonatomic, assign, readonly) float bmrValue;
+@property (nonatomic, assign, readonly) float bmiValue;
+@property (nonatomic, assign, readonly) float suggestUpperWeight;
+@property (nonatomic, assign, readonly) float suggestLowerWeight;
+@property (nonatomic, copy, readonly) NSString *bodyStatus;
 
 - (instancetype)initWithGender:(GENDER)gender age:(NSUInteger)age heightForCM:(NSUInteger)height weightForKg:(float)weight;
 

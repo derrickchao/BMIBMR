@@ -36,15 +36,23 @@
 
 #pragma mark - Public Methods
 
-- (BOOL)createNewRecordWithBMI:(NSString *)bmi
-                           bmr:(NSString *)bmr
-                     timeStamp:(NSDate *)timestamp {
-
+- (BOOL)createNewRecord:(BodyResult *)bodyResult {
+    
     newRecord = [NSEntityDescription insertNewObjectForEntityForName:DEFAULT_ENTITY_NAME inManagedObjectContext:self.managedObjectContext];
     
-    newRecord.bmiRecord = @([bmi floatValue]);
-    newRecord.bmrRecord = @([bmr floatValue]);
-    newRecord.timeStamp = timestamp;
+    newRecord.age = @(bodyResult.age);
+    newRecord.gender = bodyResult.gender;
+    newRecord.heightInCm = @(bodyResult.heightInCm);
+    newRecord.weightInKg = @(bodyResult.weightInKg);
+    newRecord.heightInFeet = @(bodyResult.heightInFeet);
+    newRecord.heightInInch = @(bodyResult.heightInInch);
+    newRecord.weightInLb = @(bodyResult.weightInLb);
+    newRecord.bmiRecord = @(bodyResult.bmiValue);
+    newRecord.bmrRecord = @(bodyResult.bmrValue);
+    newRecord.bodyStatus = bodyResult.bodyStatus;
+    newRecord.suggestUpperWeight = @(bodyResult.suggestUpperWeight);
+    newRecord.suggestLowerWeight = @(bodyResult.suggestLowerWeight);
+    newRecord.timeStamp = [NSDate date];
     
     return [self save];
 }
@@ -193,7 +201,11 @@
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:DB_FILE_NAME];
     NSError *error = nil;
     NSString *failureReason = @"There was an error creating or loading the application's saved data.";
-    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+    
+    // Add Lightweight Migration options
+    NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption, [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
+    
+    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error]) {
         // Report any error we got.
         NSMutableDictionary *dict = [NSMutableDictionary dictionary];
         dict[NSLocalizedDescriptionKey] = @"Failed to initialize the application's saved data";

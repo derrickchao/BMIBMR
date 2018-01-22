@@ -20,11 +20,28 @@
 #import "BodyResult.h"
 #import "Constants.h"
 
+#define MALE        @"Male"
+#define FEMALE      @"Female"
+
 @interface BodyResult () {
     BOOL _isImperialUnit;
     float _heightInMeter;
     float _totalInches;
 }
+
+@property (nonatomic, assign, readwrite) NSUInteger age;
+@property (nonatomic, assign, readwrite) NSUInteger heightInCm;
+@property (nonatomic, assign, readwrite) NSUInteger heightInFeet;
+@property (nonatomic, assign, readwrite) float heightInInch;
+@property (nonatomic, assign, readwrite) float weightInKg;
+@property (nonatomic, assign, readwrite) float weightInLb;
+@property (nonatomic, copy, readwrite) NSString *gender;
+
+@property (nonatomic, assign, readwrite) float bmrValue;
+@property (nonatomic, assign, readwrite) float bmiValue;
+@property (nonatomic, assign, readwrite) float suggestUpperWeight;
+@property (nonatomic, assign, readwrite) float suggestLowerWeight;
+@property (nonatomic, copy, readwrite) NSString *bodyStatus;
 
 @end
 
@@ -47,14 +64,23 @@
     
     if (self) {
         _isImperialUnit = false;
+        _age = age;
+        _heightInCm = height;
+        _weightInKg = weight;
+        _heightInFeet = 0;
+        _heightInInch = 0;
+        _weightInLb = 0;
+        
         float bmi = 0.0;
         float bmr = 0.0;
         _heightInMeter = height / 100.0;
         bmi = weight / (_heightInMeter * _heightInMeter);
 
         if (gender == GENDER_MALE) {
+            _gender = MALE;
             bmr = 66 + (13.75 * weight) + (5.0 * height) - (6.75 * age);
         } else {
+            _gender = FEMALE;
             bmr = 655 + (9.56 * weight) + (1.85 * height) - (4.67 * age);
         }
         
@@ -71,14 +97,23 @@
     
     if (self) {
         _isImperialUnit = true;
+        _age = age;
+        _heightInCm = 0;
+        _weightInKg = 0;
+        _heightInFeet = feet;
+        _heightInInch = inches;
+        _weightInLb = weight;
+
         float bmi = 0.0;
         float bmr = 0.0;
         _totalInches = (feet * 12.0) + inches;
         
         bmi = weight / (_totalInches * _totalInches) * 703;
         if (gender == GENDER_MALE) {
+            _gender = MALE;
             bmr = 66 + (6.2 * weight) + (12.7 * _totalInches) - (6.76 * age);
         } else {
+            _gender = FEMALE;
             bmr = 655 + (4.35 * weight) + (4.7 * _totalInches) - (4.7 * age);
         }
         

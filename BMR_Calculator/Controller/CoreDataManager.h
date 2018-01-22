@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 #import "AllRecord.h"
+#import "BodyResult.h"
 
 typedef NS_ENUM(NSUInteger, ResultChangeType) {
     Insert = 1,
@@ -34,7 +35,7 @@ typedef NS_ENUM(NSUInteger, ResultChangeType) {
 @property (nonatomic, weak) id<CoreDataManagerDelegate> delegate;
 
 + (instancetype)shareInstance;
-- (BOOL)createNewRecordWithBMI:(NSString *)bmi bmr:(NSString *)bmr timeStamp:(NSDate *)timestamp;
+- (BOOL)createNewRecord:(BodyResult *)bodyResult;
 - (BOOL)deleteRecord:(AllRecord *)record;
 - (NSUInteger)totalRecords;
 - (AllRecord *)getRecordByIndex:(NSUInteger)index;

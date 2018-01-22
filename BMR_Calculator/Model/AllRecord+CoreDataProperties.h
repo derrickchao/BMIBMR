@@ -19,6 +19,17 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSNumber *bmrRecord;
 @property (nullable, nonatomic, retain) NSDate *timeStamp;
 
+@property (nullable, nonatomic, retain) NSNumber *age;
+@property (nullable, nonatomic, retain) NSNumber *heightInCm;
+@property (nullable, nonatomic, retain) NSNumber *heightInFeet;
+@property (nullable, nonatomic, retain) NSNumber *heightInInch;
+@property (nullable, nonatomic, retain) NSNumber *weightInKg;
+@property (nullable, nonatomic, retain) NSNumber *weightInLb;
+@property (nullable, nonatomic, retain) NSNumber *suggestLowerWeight;
+@property (nullable, nonatomic, retain) NSNumber *suggestUpperWeight;
+@property (nullable, nonatomic, retain) NSString *gender;
+@property (nullable, nonatomic, retain) NSString *bodyStatus;
+
 @end
 
 NS_ASSUME_NONNULL_END
