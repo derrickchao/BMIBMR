@@ -23,7 +23,6 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *unitPickerViewHeightConstraint;
 @property (weak, nonatomic) IBOutlet UILabel *unitLabel;
 
-
 @end
 
 @implementation SettingsVC
@@ -66,9 +65,7 @@
         self.textViewTopConstraint.constant = UNIT_PICKERVIEW_HEIGHT;
         
         [self.view layoutIfNeeded];
-    } completion:^(BOOL finished) {
-        
-    }];
+    } completion:^(BOOL finished) {}];
 }
 
 - (void)collapseUnitMenu {
@@ -80,8 +77,7 @@
         self.textViewTopConstraint.constant = 0.0;
         
         [self.view layoutIfNeeded];
-    } completion:^(BOOL finished) {
-    }];
+    } completion:^(BOOL finished) {}];
 }
 
 #pragma mark - UIPickerViewDataSource

@@ -33,4 +33,6 @@ typedef NS_ENUM(NSUInteger, GENDER) {
 
 - (instancetype)initWithGender:(GENDER)gender age:(NSUInteger)age heightForFeet:(NSUInteger)feet heightForInches:(float)inches weightForLbs:(float)weight;
 
++ (NSString *)getBodyStatus:(float)bmiValue;    // Workround for Data Model v1
+
 @end

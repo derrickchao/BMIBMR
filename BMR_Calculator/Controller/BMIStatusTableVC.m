@@ -10,9 +10,8 @@
 #import "BMIStatusCell.h"
 #import "Constants.h"
 
-@interface BMIStatusTableVC () {
-    BMIStatusCell *_selectedCell;
-}
+@interface BMIStatusTableVC ()
+
 @end
 
 @implementation BMIStatusTableVC

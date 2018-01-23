@@ -36,6 +36,11 @@ typedef NS_ENUM(NSUInteger, ResultChangeType) {
 
 + (instancetype)shareInstance;
 - (BOOL)createNewRecord:(BodyResult *)bodyResult;
+/*
+ updateRecord method
+ parameter values: use columm name for key, and new value for value.
+ */
+- (void)updateRecord:(AllRecord *)record  values:(NSDictionary *)values;
 - (BOOL)deleteRecord:(AllRecord *)record;
 - (NSUInteger)totalRecords;
 - (AllRecord *)getRecordByIndex:(NSUInteger)index;

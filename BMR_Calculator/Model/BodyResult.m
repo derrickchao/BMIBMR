@@ -52,7 +52,14 @@
     if (self) {
         _bmrValue = 0.0;
         _bmiValue = 0.0;
-        _bodyStatus = nil;
+        _bodyStatus = @"";
+        _age = 0;
+        _heightInCm = 0;
+        _weightInKg = 0;
+        _heightInFeet = 0;
+        _heightInInch = 0;
+        _weightInLb = 0;
+        _gender = @"";
     }
     
     return self;
@@ -122,6 +129,14 @@
     }
     
     return self;
+}
+
++ (NSString *)getBodyStatus:(float)bmiValue {
+    
+    BodyResult *result = [[BodyResult alloc] init];
+    result.bmiValue = bmiValue;
+    
+    return result.bodyStatus;
 }
 
 #pragma mark - Property

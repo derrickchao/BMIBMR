@@ -52,9 +52,18 @@
     newRecord.bodyStatus = bodyResult.bodyStatus;
     newRecord.suggestUpperWeight = @(bodyResult.suggestUpperWeight);
     newRecord.suggestLowerWeight = @(bodyResult.suggestLowerWeight);
-    newRecord.timeStamp = [NSDate date];
     
     return [self save];
+}
+
+- (void)updateRecord:(AllRecord *)record
+              values:(NSDictionary *)values {
+    
+    for (NSString *key in values) {
+        [record setValue:[values objectForKey:key] forKey:key];
+    }
+    
+    [self.managedObjectContext refreshObject:record mergeChanges:true];
 }
 
 - (BOOL)deleteRecord:(AllRecord *)record {

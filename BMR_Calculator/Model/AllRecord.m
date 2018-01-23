@@ -12,4 +12,10 @@
 
 // Insert code here to add functionality to your managed object subclass
 
+- (void)awakeFromInsert {
+    [super awakeFromInsert];
+    
+    self.timeStamp = [NSDate date];
+}
+
 @end
