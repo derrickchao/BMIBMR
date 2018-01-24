@@ -15,7 +15,7 @@
     NSArray *_unitArray;
 }
 
-@property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (weak, nonatomic) IBOutlet UITextView *introductionTextView;
 @property (weak, nonatomic) IBOutlet UIButton *unitButton;
 @property (weak, nonatomic) IBOutlet UIView *dividerView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewTopConstraint;
@@ -30,17 +30,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _unitArray = @[IMPERIAL_UNIT, METRIC_UNIT];
+    _unitArray = @[NSLocalizedString(@"IMPERIAL", nil), NSLocalizedString(@"METRIC", nil)];
     self.unitPickerView.delegate = self;
     self.unitPickerView.dataSource = self;
     
-    self.textView.editable = false;
-    self.textView.backgroundColor = [UIColor colorWithRed:63.0/255.0 green:59.0/255.0 blue:58.0/255.0 alpha:0.85];
+    self.introductionTextView.editable = false;
+    self.introductionTextView.backgroundColor = [UIColor colorWithRed:63.0/255.0 green:59.0/255.0 blue:58.0/255.0 alpha:0.85];
+    self.introductionTextView.text = [NSString stringWithFormat:@"%@\n\n%@",NSLocalizedString(@"INTRODUCTION_OF_BMI", nil),NSLocalizedString(@"INTRODUCTION_OF_BMR", nil)];
     
     if ([[[NSUserDefaults standardUserDefaults] objectForKey:UNIT_KEY] isEqualToString:IMPERIAL_UNIT]) {
+        self.unitLabel.text = NSLocalizedString(@"IMPERIAL", nil);
         [self.unitPickerView selectRow:0 inComponent:0 animated:false];
     } else {
-        self.unitLabel.text = METRIC_UNIT;
+        self.unitLabel.text = NSLocalizedString(@"METRIC", nil);
         [self.unitPickerView selectRow:1 inComponent:0 animated:false];
     }
 }
@@ -51,6 +53,11 @@
     if (!self.unitPickerView.isHidden) {
         [self collapseUnitMenu];
     }
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    [self.introductionTextView scrollRangeToVisible:NSMakeRange(0, 0)];
 }
 
 #pragma mark - Private Methods
@@ -97,10 +104,10 @@
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    NSString *currentUnit = [_unitArray objectAtIndex:row];
+    NSString *currentUnit = row == 0 ? IMPERIAL_UNIT : METRIC_UNIT;
     [[NSUserDefaults standardUserDefaults] setObject:currentUnit forKey:UNIT_KEY];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    self.unitLabel.text = currentUnit;
+    self.unitLabel.text = [_unitArray objectAtIndex:row];
     [[NSNotificationCenter defaultCenter] postNotificationName:kUnitDidChangeNotification object:nil];
 }
 

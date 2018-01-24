@@ -55,6 +55,8 @@
 
 #pragma mark - BMI Status info
 
+
+#define BMI_STATUS_LOCALIZABLE_ARRAY                    @[NSLocalizedString(@"VERY_SEVERELY_UNDERWEIGHT", nil), NSLocalizedString(@"SEVERELY_UNDERWEIGHT", nil), NSLocalizedString(@"UNDERWEIGHT", nil), NSLocalizedString(@"NORMAL", nil), NSLocalizedString(@"OVERWEIGHT", nil), NSLocalizedString(@"OBESE_CLASS_I", nil), NSLocalizedString(@"OBESE_CLASS_II", nil), NSLocalizedString(@"OBESE_CLASS_III", nil)]
 #define BMI_STATUS_ARRAY                    @[@"Very severely underweight", @"Severely underweight", @"Underweight", @"Normal", @"Overweight", @"Obese class I", @"Obese class II", @"Obese class III"]
 #define BMI_RANGE_ARRAY                     @[@"≤ 14.9", @"15.0~15.9", @"16.0~18.4", @"18.5~24.9", @"25.0~29.9", @"30.0~34.9", @"35.0~39.9", @"≥ 40.0"]
 

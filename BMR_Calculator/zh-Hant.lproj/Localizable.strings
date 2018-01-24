@@ -1,0 +1,39 @@
+/* 
+  Localizable.strings
+  BMIBMRCalculator
+
+  Created by 趙子超 on 23/01/2018.
+  Copyright © 2018 chao. All rights reserved.
+*/
+
+"METRIC" = "公制";
+"IMPERIAL" = "英制";
+"KG" = "公斤";
+"LB" = "磅";
+"CM" = "公分";
+"FEET" = "呎";
+"INCH" = "吋";
+
+"BMR_DESCRIPTION" = "BMR: %.f 大卡/天";
+
+"VERY_SEVERELY_UNDERWEIGHT" = "極度過輕";
+"SEVERELY_UNDERWEIGHT" = "嚴重過輕";
+"UNDERWEIGHT" = "過輕";
+"NORMAL" = "正常";
+"OVERWEIGHT" = "過重";
+"OBESE_CLASS_I" = "肥胖";
+"OBESE_CLASS_II" = "嚴重肥胖";
+"OBESE_CLASS_III" = "極度肥胖";
+
+"OK" = "確定";
+"CANCEL" = "取消";
+"DATA_INVALID" = "資料有誤!";
+"INPUT_APPROPRIATE_DATA" = "請輸入適當的數字";
+"ALL_CLEAR" = "清除完成";
+"ERROR" = "錯誤!";
+"NO_DATA_SAVE" = "沒有資料可儲存";
+"SAVE_SUCCESSFULLY" = "儲存成功";
+
+"INTRODUCTION_OF_BMI" = "身高體重指數（又稱身體質量指數，英文為Body Mass Index，簡稱BMI）是一個計算值。\n\nBMI原來的設計是一個用於公眾健康研究的統計工具。當需要知道肥胖是否為某一疾病的致病原因時，可以把病人的身高及體重換算成BMI，再找出其數值及病發率是否有線性關連。\n\n由於BMI主要反應整體體重，無法區別體重中體脂肪組織與非脂肪組織（包括肌肉、器官），同樣身高體重的人可算出相同的BMI，但其實脂肪量不同，因此其實BMI是整體營養狀態的指標。以往拿來做為肥胖的指標，是因發現BMI與體脂肪在統計上有高度相關；但在同樣BMI之下，仍會有體脂肪率的差異。";
+
+"INTRODUCTION_OF_BMR" = "基礎代謝率（英語：basal metabolic rate，首字母縮寫BMR）是指在自然溫度環境中，恆溫動物（比如人）的身體在非劇烈活動的狀態下，處於消化狀態（腸胃充滿食物，分解作用大於合成作用），維持生命所需消耗的最低能量。\n\n基礎代謝率會隨著年齡增加或體重減輕而降低，而隨著肌肉增加而增加。疾病、進食、環境溫度變化、承受壓力水平變化都會改變人體的能量消耗，從而影響基礎代謝率。";

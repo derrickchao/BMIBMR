@@ -20,7 +20,7 @@
 - (void)configureCell:(NSIndexPath *)indexPath
            bodyResult:(BodyResult *)result {
     
-    self.statusLabel.text = [BMI_STATUS_ARRAY objectAtIndex:indexPath.row];
+    self.statusLabel.text = [BMI_STATUS_LOCALIZABLE_ARRAY objectAtIndex:indexPath.row];
     self.statusRangeLabel.text = [BMI_RANGE_ARRAY objectAtIndex:indexPath.row];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     
@@ -54,7 +54,14 @@
     }
     
     if (result) {
-        if ([result.bodyStatus isEqualToString:self.statusLabel.text]) {
+        int index = 0;
+        for (NSString *status in BMI_STATUS_ARRAY) {
+            if ([result.bodyStatus isEqualToString:status]) {
+                break;
+            }
+            index++;
+        }
+        if (indexPath.row == index) {
             self.backgroundColor = [UIColor lightGrayColor];
         }
     } else {

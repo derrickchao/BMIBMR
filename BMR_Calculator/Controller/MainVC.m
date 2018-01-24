@@ -48,7 +48,7 @@
         [self setupCMTextField];
         self.feetTextField.hidden = true;
         self.inchTextField.hidden = true;
-        self.weightTextField.placeholder = @"kg";
+        self.weightTextField.placeholder = NSLocalizedString(@"KG", nil);
     } else {
         
     }
@@ -70,7 +70,7 @@
     if (!_cmTextField) {
         _cmTextField = [[UITextField alloc] init];
         _cmTextField.translatesAutoresizingMaskIntoConstraints = false;
-        _cmTextField.placeholder = @"cm";
+        _cmTextField.placeholder = NSLocalizedString(@"CM", nil);;
         _cmTextField.textAlignment = NSTextAlignmentCenter;
         _cmTextField.borderStyle = UITextBorderStyleRoundedRect;
         _cmTextField.delegate = self;
@@ -164,7 +164,7 @@
 actionCompletionHandler:(void (^)(void))completionHandler {
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
         if (completionHandler != nil) {
             completionHandler();
@@ -196,7 +196,7 @@ actionCompletionHandler:(void (^)(void))completionHandler {
     
     if ([self isImperialUnit]) {
         self.cmTextField.hidden = true;
-        self.weightTextField.placeholder = @"lb";
+        self.weightTextField.placeholder = NSLocalizedString(@"LB", nil);
         self.feetTextField.hidden = false;
         self.inchTextField.hidden = false;
     } else {
@@ -204,7 +204,7 @@ actionCompletionHandler:(void (^)(void))completionHandler {
         self.cmTextField.hidden = false;
         self.feetTextField.hidden = true;
         self.inchTextField.hidden = true;
-        self.weightTextField.placeholder = @"kg";
+        self.weightTextField.placeholder = NSLocalizedString(@"KG", nil);
     }
     
     [self setDefault];
@@ -224,7 +224,7 @@ actionCompletionHandler:(void (^)(void))completionHandler {
         
         if (age == 0 || age > MAXIMUM_AGE || weight == 0.0 || weight > MAXIMUM_HEIGHT_POUND || feet > MAXIMUM_HEIGHT_FEET || inch > MAXIMUM_HEIGHT_INCH || (feet == 0 && inch == 0.0)) {
             
-            [self alertTitle:@"Input data Invalid!" message:@"Please input a correct number" actionCompletionHandler:nil];
+            [self alertTitle:NSLocalizedString(@"DATA_INVALID", nil) message:NSLocalizedString(@"INPUT_APPROPRIATE_DATA", nil) actionCompletionHandler:nil];
         } else {
             
             if (self.genderSegmentControl.selectedSegmentIndex == 0) {
@@ -237,7 +237,7 @@ actionCompletionHandler:(void (^)(void))completionHandler {
             
             self.bmiResultLabel.text = [NSString stringWithFormat:@"%.1f", _bodyResult.bmiValue];
             self.bmrResultLabel.text = [NSString stringWithFormat:@"%.1f", _bodyResult.bmrValue];
-            self.suggestWeightResultLabel.text = [NSString stringWithFormat:@"%.1f~%.1f lbs", _bodyResult.suggestLowerWeight, _bodyResult.suggestUpperWeight];
+            self.suggestWeightResultLabel.text = [NSString stringWithFormat:@"%.1f~%.1f %@", _bodyResult.suggestLowerWeight, _bodyResult.suggestUpperWeight,NSLocalizedString(@"LB", nil)];
             
             self.bmiStatusTableVC.bodyResult = _bodyResult;
             [self.bmiStatusTableVC.tableView reloadData];
@@ -250,7 +250,7 @@ actionCompletionHandler:(void (^)(void))completionHandler {
         // Check input data is valid
         if (age == 0 || age > MAXIMUM_AGE || cm == 0 || cm > MAXIMUM_HEIGHT_CM || weight == 0 || weight > MAXIMUM_WEIGHT_KG) {
             
-            [self alertTitle:@"Input data Invalid!" message:@"Please input a correct number" actionCompletionHandler:nil];
+            [self alertTitle:NSLocalizedString(@"DATA_INVALID", nil) message:NSLocalizedString(@"INPUT_APPROPRIATE_DATA", nil) actionCompletionHandler:nil];
             
         } else {
             
@@ -264,7 +264,7 @@ actionCompletionHandler:(void (^)(void))completionHandler {
             
             self.bmiResultLabel.text = [NSString stringWithFormat:@"%.1f", _bodyResult.bmiValue];
             self.bmrResultLabel.text = [NSString stringWithFormat:@"%.1f", _bodyResult.bmrValue];
-            self.suggestWeightResultLabel.text = [NSString stringWithFormat:@"%.1f~%.1f kg", _bodyResult.suggestLowerWeight, _bodyResult.suggestUpperWeight];
+            self.suggestWeightResultLabel.text = [NSString stringWithFormat:@"%.1f~%.1f %@", _bodyResult.suggestLowerWeight, _bodyResult.suggestUpperWeight,NSLocalizedString(@"KG", nil)];
             
             self.bmiStatusTableVC.bodyResult = _bodyResult;
             [self.bmiStatusTableVC.tableView reloadData];
@@ -275,14 +275,14 @@ actionCompletionHandler:(void (^)(void))completionHandler {
 - (IBAction)clearBtnPressed:(UIButton *)sender {
 
     [self setDefault];
-    [self alertTitle:@"All Clear" message:nil actionCompletionHandler:nil];
+    [self alertTitle:NSLocalizedString(@"ALL_CLEAR", nil) message:nil actionCompletionHandler:nil];
 }
 
 - (IBAction)saveBtnPressed:(UIButton *)sender {
     
     if ([self.bmiResultLabel.text isEqualToString:DEFAULT_ZERO_STRING]) {
 
-        [self alertTitle:@"Error!" message:@"No Data to Save" actionCompletionHandler:nil];
+        [self alertTitle:NSLocalizedString(@"ERROR", nil) message:NSLocalizedString(@"NO_DATA_SAVE", nil) actionCompletionHandler:nil];
 
     } else {
         
@@ -290,7 +290,7 @@ actionCompletionHandler:(void (^)(void))completionHandler {
 //        [[CoreDataManager shareInstance] createNewRecordWithBMI:self.bmiResultLabel.text bmr:self.bmrResultLabel.text timeStamp:[NSDate date]];
         [[CoreDataManager shareInstance] createNewRecord:_bodyResult];
         
-        [self alertTitle:nil message:@"Save successful" actionCompletionHandler:^{
+        [self alertTitle:nil message:NSLocalizedString(@"SAVE_SUCCESSFULLY", nil) actionCompletionHandler:^{
             [self setDefault];
         }];
     }

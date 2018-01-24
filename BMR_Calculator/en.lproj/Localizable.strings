@@ -1,0 +1,39 @@
+/* 
+  Localizable.strings
+  BMIBMRCalculator
+
+  Created by 趙子超 on 23/01/2018.
+  Copyright © 2018 chao. All rights reserved.
+*/
+
+"METRIC" = "Metric";
+"IMPERIAL" = "Imperial";
+"KG" = "Kg";
+"LB" = "Lb";
+"CM" = "cm";
+"FEET" = "feet";
+"INCH" = "inch";
+
+"BMR_DESCRIPTION" = "BMR: %.f kcal/day";
+
+"VERY_SEVERELY_UNDERWEIGHT" = "Very severely underweight";
+"SEVERELY_UNDERWEIGHT" = "Severely underweight";
+"UNDERWEIGHT" = "Underweight";
+"NORMAL" = "Normal";
+"OVERWEIGHT" = "Overweight";
+"OBESE_CLASS_I" = "Obese class I";
+"OBESE_CLASS_II" = "Obese class II";
+"OBESE_CLASS_III" = "Obese class III";
+
+"OK" = "OK";
+"CANCEL" = "Cancel";
+"DATA_INVALID" = "Input data Invalid!";
+"INPUT_APPROPRIATE_DATA" = "Please input a appropriate number";
+"ALL_CLEAR" = "All clear";
+"ERROR" = "Error!";
+"NO_DATA_SAVE" = "No Data to Save";
+"SAVE_SUCCESSFULLY" = "Save successful";
+
+"INTRODUCTION_OF_BMI" = "The body mass index (BMI) or Quetelet index is a value derived from the mass (weight) and height of an individual.\n\nThe BMI is an attempt to quantify the amount of tissue mass (muscle, fat, and bone) in an individual, and then categorize that person as underweight, normal weight, overweight, or obese based on that value.\n\nBMI provides a simple numeric measure of a person's thickness or thinness, allowing health professionals to discuss weight problems more objectively with their patients.\n\nBMI is particularly inaccurate for people who are very fit or athletic, as their high muscle mass can classify them in the overweight category by BMI.";
+
+"INTRODUCTION_OF_BMR" = "Basal metabolic rate (BMR) is the rate of energy expenditure per unit time by endothermic animals at rest.\n\nBasal metabolic rate is the amount of energy per unit time that a person needs to keep the body functioning at rest.\n\nThe body's generation of heat is known as thermogenesis and it can be measured to determine the amount of energy expended. BMR generally decreases with age and with the decrease in lean body mass (as may happen with aging). Increasing muscle mass has the effect of increasing BMR.";

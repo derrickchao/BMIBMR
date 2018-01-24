@@ -1,0 +1,96 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "0i3-hv-19C"; */
+"0i3-hv-19C.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "All Records"; ObjectID = "20s-kZ-96N"; */
+"20s-kZ-96N.title" = "All Records";
+
+/* Class = "UILabel"; text = "Gender"; ObjectID = "477-DN-9VR"; */
+"477-DN-9VR.text" = "Gender";
+
+/* Class = "UITabBarItem"; title = "Calculate"; ObjectID = "4hc-YU-oXm"; */
+"4hc-YU-oXm.title" = "Calculate";
+
+/* Class = "UILabel"; text = "No Results"; ObjectID = "AO1-OG-cu2"; */
+"AO1-OG-cu2.text" = "No Results";
+
+/* Class = "UIButton"; normalTitle = "Clear"; ObjectID = "Gkz-ot-EnR"; */
+"Gkz-ot-EnR.normalTitle" = "Clear";
+
+/* Class = "UILabel"; text = "BMI"; ObjectID = "Ijh-Ud-VqN"; */
+"Ijh-Ud-VqN.text" = "BMI";
+
+/* Class = "UILabel"; text = "Status:"; ObjectID = "PkM-Qa-fAH"; */
+"PkM-Qa-fAH.text" = "Status:";
+
+/* Class = "UISegmentedControl"; Vny-qr-LZh.segmentTitles[0] = "Male"; ObjectID = "Vny-qr-LZh"; */
+"Vny-qr-LZh.segmentTitles[0]" = "Male";
+
+/* Class = "UISegmentedControl"; Vny-qr-LZh.segmentTitles[1] = "Female"; ObjectID = "Vny-qr-LZh"; */
+"Vny-qr-LZh.segmentTitles[1]" = "Female";
+
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "WFq-W2-heg"; */
+"WFq-W2-heg.normalTitle" = "Save";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "Xwt-0L-Vtu"; */
+"Xwt-0L-Vtu.title" = "Settings";
+
+/* Class = "UILabel"; text = "Imperial"; ObjectID = "bbI-NX-Maj"; */
+"bbI-NX-Maj.text" = "Imperial";
+
+/* Class = "UILabel"; text = "BMR"; ObjectID = "bnn-fP-9Cv"; */
+"bnn-fP-9Cv.text" = "BMR";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "c8U-cA-ltF"; */
+"c8U-cA-ltF.text" = "Label";
+
+/* Class = "UILabel"; text = "0.0"; ObjectID = "dEP-Za-1fs"; */
+"dEP-Za-1fs.text" = "0.0";
+
+/* Class = "UITextField"; placeholder = "lb"; ObjectID = "dIj-l4-Rum"; */
+"dIj-l4-Rum.placeholder" = "lb";
+
+/* Class = "UILabel"; text = "BMI"; ObjectID = "eND-fB-vPH"; */
+"eND-fB-vPH.text" = "BMI";
+
+/* Class = "UILabel"; text = "BMR"; ObjectID = "hwl-ci-qvw"; */
+"hwl-ci-qvw.text" = "BMR";
+
+/* Class = "UITextView"; text = "The body mass index (BMI) or Quetelet index is a value derived from the mass (weight) and height of an individual."; ObjectID = "iDV-Nu-J9r"; */
+"iDV-Nu-J9r.text" = "The body mass index (BMI) or Quetelet index is a value derived from the mass (weight) and height of an individual.";
+
+/* Class = "UILabel"; text = "Time"; ObjectID = "ix5-x2-NUs"; */
+"ix5-x2-NUs.text" = "Time";
+
+/* Class = "UILabel"; text = "Suggest Weight"; ObjectID = "jKj-6y-zrN"; */
+"jKj-6y-zrN.text" = "Suggest Weight";
+
+/* Class = "UITextField"; placeholder = "inch"; ObjectID = "lJt-1F-9uT"; */
+"lJt-1F-9uT.placeholder" = "inch";
+
+/* Class = "UILabel"; text = "Settings"; ObjectID = "mAS-gP-tiu"; */
+"mAS-gP-tiu.text" = "Settings";
+
+/* Class = "UILabel"; text = "Age"; ObjectID = "nCZ-Tf-dQD"; */
+"nCZ-Tf-dQD.text" = "Age";
+
+/* Class = "UILabel"; text = "Height"; ObjectID = "nFI-2a-E5k"; */
+"nFI-2a-E5k.text" = "Height";
+
+/* Class = "UILabel"; text = "0.0"; ObjectID = "nVK-Ap-dgQ"; */
+"nVK-Ap-dgQ.text" = "0.0";
+
+/* Class = "UILabel"; text = "Weight"; ObjectID = "q4c-qB-9wo"; */
+"q4c-qB-9wo.text" = "Weight";
+
+/* Class = "UILabel"; text = "Unit of measure"; ObjectID = "snt-Tj-fJC"; */
+"snt-Tj-fJC.text" = "Unit of measure";
+
+/* Class = "UITabBarItem"; title = "History"; ObjectID = "tCR-G7-X1K"; */
+"tCR-G7-X1K.title" = "History";
+
+/* Class = "UITextField"; placeholder = "feet"; ObjectID = "zQd-k0-UqD"; */
+"zQd-k0-UqD.placeholder" = "feet";
+
+/* Class = "UIButton"; normalTitle = "Calculate"; ObjectID = "zwd-MT-fUt"; */
+"zwd-MT-fUt.normalTitle" = "Calculate";

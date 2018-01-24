@@ -31,7 +31,7 @@
 - (void)configureCell:(AllRecord *)record {
     
     self.bmiRecordLabel.text = [NSString stringWithFormat:@"BMI: %.1f",[record.bmiRecord floatValue]];
-    self.bmrRecordLabel.text = [NSString stringWithFormat:@"BMR: %.f cals/day",[record.bmrRecord floatValue]];
+    self.bmrRecordLabel.text = [NSString stringWithFormat:NSLocalizedString(@"BMR_DESCRIPTION", nil),[record.bmrRecord floatValue]];
     self.timeStampLabel.text = [HistoryTableViewCell createTimestamp:record.timeStamp];
     
     // For Data Model v1 users.
@@ -40,24 +40,30 @@
         [[CoreDataManager shareInstance] updateRecord:record values:@{COLUMN_NAME_BODY_STATUS: newBodyStatus}];
     }
     
-    self.bodyStatusLabel.text = record.bodyStatus;
-    
-    // Set Status Label Color
+    // Set Status Label text and Color
     if ([record.bodyStatus isEqualToString:[BMI_STATUS_ARRAY objectAtIndex:0]]) {
+        self.bodyStatusLabel.text = [BMI_STATUS_LOCALIZABLE_ARRAY objectAtIndex:0];
         self.bodyStatusLabel.textColor = [UIColor colorWithRed:1.0/255.0 green:87.0/255.0 blue:155.0/255.0 alpha:1.0];
     } else if ([record.bodyStatus isEqualToString:[BMI_STATUS_ARRAY objectAtIndex:1]]) {
+        self.bodyStatusLabel.text = [BMI_STATUS_LOCALIZABLE_ARRAY objectAtIndex:1];
         self.bodyStatusLabel.textColor = [UIColor colorWithRed:3.0/255.0 green:155.0/255.0 blue:229.0/255.0 alpha:1.0];
     } else if ([record.bodyStatus isEqualToString:[BMI_STATUS_ARRAY objectAtIndex:2]]) {
+        self.bodyStatusLabel.text = [BMI_STATUS_LOCALIZABLE_ARRAY objectAtIndex:2];
         self.bodyStatusLabel.textColor = [UIColor colorWithRed:79.0/255.0 green:195.0/255.0 blue:247.0/255.0 alpha:1.0];
     } else if ([record.bodyStatus isEqualToString:[BMI_STATUS_ARRAY objectAtIndex:3]]) {
+        self.bodyStatusLabel.text = [BMI_STATUS_LOCALIZABLE_ARRAY objectAtIndex:3];
         self.bodyStatusLabel.textColor = [UIColor colorWithRed:0.0/255.0 green:230.0/255.0 blue:118.0/255.0 alpha:1.0];
     } else if ([record.bodyStatus isEqualToString:[BMI_STATUS_ARRAY objectAtIndex:4]]) {
+        self.bodyStatusLabel.text = [BMI_STATUS_LOCALIZABLE_ARRAY objectAtIndex:4];
         self.bodyStatusLabel.textColor = [UIColor colorWithRed:255.0/255.0 green:167.0/255.0 blue:38.0/255.0 alpha:1.0];
     } else if ([record.bodyStatus isEqualToString:[BMI_STATUS_ARRAY objectAtIndex:5]]) {
+        self.bodyStatusLabel.text = [BMI_STATUS_LOCALIZABLE_ARRAY objectAtIndex:5];
         self.bodyStatusLabel.textColor = [UIColor colorWithRed:245.0/255.0 green:124.0/255.0 blue:0.0/255.0 alpha:1.0];
     } else if ([record.bodyStatus isEqualToString:[BMI_STATUS_ARRAY objectAtIndex:6]]) {
+        self.bodyStatusLabel.text = [BMI_STATUS_LOCALIZABLE_ARRAY objectAtIndex:6];
         self.bodyStatusLabel.textColor = [UIColor colorWithRed:244.0/255.0 green:67.0/255.0 blue:54.0/255.0 alpha:1.0];
     } else if ([record.bodyStatus isEqualToString:[BMI_STATUS_ARRAY objectAtIndex:7]]) {
+        self.bodyStatusLabel.text = [BMI_STATUS_LOCALIZABLE_ARRAY objectAtIndex:7];
         self.bodyStatusLabel.textColor = [UIColor colorWithRed:255.0/255.0 green:10.0/255.0 blue:10.0/255.0 alpha:1.0];
     }
 }
