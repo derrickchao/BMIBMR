@@ -21,6 +21,8 @@
     self.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.layer.borderWidth = 1.0;
     
+    self.titleLabel.font = [UIFont boldSystemFontOfSize:20.0];
+    self.titleLabel.adjustsFontSizeToFitWidth = true;
 }
 
 - (void)layoutSubviews {

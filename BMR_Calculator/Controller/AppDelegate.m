@@ -27,9 +27,20 @@
     
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"backgroundImage.png"] forBarMetrics:UIBarMetricsDefault];
     
+    
+
     // Default Unit
     if (![[NSUserDefaults standardUserDefaults] objectForKey:UNIT_KEY]) {
-        [[NSUserDefaults standardUserDefaults] setObject:IMPERIAL_UNIT forKey:UNIT_KEY];
+        
+        NSString *currentLanguage = [[NSLocale preferredLanguages] firstObject];
+#ifdef DEBUG
+        NSLog(@"language: %@ ", currentLanguage);
+#endif
+        if ([currentLanguage isEqualToString:@"zh-Hant-TW"]) {
+            [[NSUserDefaults standardUserDefaults] setObject:METRIC_UNIT forKey:UNIT_KEY];
+        } else {
+            [[NSUserDefaults standardUserDefaults] setObject:IMPERIAL_UNIT forKey:UNIT_KEY];
+        }
     }
     
     return YES;

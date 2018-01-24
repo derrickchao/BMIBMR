@@ -11,7 +11,7 @@
 #import "Constants.h"
 
 const CGFloat IPHONE_CELL_HEIGHT = 40.0;
-const CGFloat IPAD_CELL_HEIGHT = 40.0;
+const CGFloat IPAD_CELL_HEIGHT = 55.0;
 
 @interface BMIStatusTableVC ()
 

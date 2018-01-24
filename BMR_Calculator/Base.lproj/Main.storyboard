@@ -124,7 +124,7 @@
                                                 </variation>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="feet" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="zQd-k0-UqD">
-                                                <rect key="frame" x="171.5" y="11.5" width="77" height="35"/>
+                                                <rect key="frame" x="171.5" y="10.5" width="77" height="35"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -284,54 +284,44 @@
                                     <constraint firstItem="bhI-aU-4hT" firstAttribute="top" secondItem="eND-fB-vPH" secondAttribute="bottom" id="xr2-km-nur"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwd-MT-fUt" userLabel="calculateBtn" customClass="FancyButton">
-                                <rect key="frame" x="16" y="518" width="112.5" height="40"/>
-                                <color key="backgroundColor" red="0.011764705882352941" green="0.66274509803921566" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="umZ-O4-aCg">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="60"/>
-                                    </constraint>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
-                                <state key="normal" title="Calculate">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="0.86865562080536918" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="calculateBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BTd-VG-lmt"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gkz-ot-EnR" userLabel="clearBtn" customClass="FancyButton">
-                                <rect key="frame" x="131.5" y="518" width="112.5" height="40"/>
-                                <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="gB5-W9-zRg">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="60"/>
-                                    </constraint>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
-                                <state key="normal" title="Clear">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="0.86865562080000003" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="clearBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DN5-YU-YAq"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WFq-W2-heg" userLabel="saveBtn" customClass="FancyButton">
-                                <rect key="frame" x="246.5" y="518" width="112.5" height="40"/>
-                                <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="4Nz-VG-hYK">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="60"/>
-                                    </constraint>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
-                                <state key="normal" title="Save">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="0.86865562080000003" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ED6-f9-o9d"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="C58-js-Ua8">
+                                <rect key="frame" x="16" y="523" width="343" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwd-MT-fUt" userLabel="calculateBtn" customClass="FancyButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="104.5" height="40"/>
+                                        <color key="backgroundColor" red="0.011764705882352941" green="0.66274509803921566" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                        <state key="normal" title="Calculate">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="0.86865562080536918" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="calculateBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BTd-VG-lmt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gkz-ot-EnR" userLabel="clearBtn" customClass="FancyButton">
+                                        <rect key="frame" x="119.5" y="0.0" width="104" height="40"/>
+                                        <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                        <state key="normal" title="Clear">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="0.86865562080000003" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clearBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DN5-YU-YAq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WFq-W2-heg" userLabel="saveBtn" customClass="FancyButton">
+                                        <rect key="frame" x="238.5" y="0.0" width="104.5" height="40"/>
+                                        <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                        <state key="normal" title="Save">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="0.86865562080000003" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ED6-f9-o9d"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iyR-vF-fzw" customClass="GADBannerView">
                                 <rect key="frame" x="0.0" y="568" width="375" height="50"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -360,47 +350,32 @@
                             <constraint firstItem="zki-3M-HWx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="56z-P1-GK4"/>
                             <constraint firstItem="Q2y-T6-RgJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="7E4-wB-ZGc"/>
                             <constraint firstItem="Vjt-Qv-478" firstAttribute="top" secondItem="rP3-iU-aDM" secondAttribute="bottom" id="7jG-32-pVC"/>
+                            <constraint firstItem="C58-js-Ua8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="AGG-KK-atM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HGb-43-VQa" secondAttribute="trailing" id="Acq-Oj-5yV"/>
-                            <constraint firstItem="Vjt-Qv-478" firstAttribute="top" secondItem="Gkz-ot-EnR" secondAttribute="bottom" constant="1" id="Bpr-xD-qv6"/>
-                            <constraint firstItem="zwd-MT-fUt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Cyp-A3-tFw"/>
                             <constraint firstAttribute="trailing" secondItem="iyR-vF-fzw" secondAttribute="trailing" id="Eh9-Ke-SV2"/>
-                            <constraint firstItem="iyR-vF-fzw" firstAttribute="top" secondItem="zwd-MT-fUt" secondAttribute="bottom" constant="10" id="GOo-GQ-wEg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Q2y-T6-RgJ" secondAttribute="trailing" constant="-20" id="H1f-Fa-ogp"/>
-                            <constraint firstItem="Vjt-Qv-478" firstAttribute="top" secondItem="zwd-MT-fUt" secondAttribute="bottom" constant="1" id="Hfc-1J-bLk"/>
-                            <constraint firstItem="Gkz-ot-EnR" firstAttribute="top" secondItem="HGb-43-VQa" secondAttribute="bottom" constant="5" id="Kxv-lQ-qa0"/>
                             <constraint firstItem="HGb-43-VQa" firstAttribute="top" secondItem="Q2y-T6-RgJ" secondAttribute="bottom" constant="5" id="Lmp-dD-utx"/>
                             <constraint firstItem="zki-3M-HWx" firstAttribute="top" secondItem="HHd-gS-L56" secondAttribute="bottom" id="Qzh-Mk-seC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iyR-vF-fzw" secondAttribute="trailing" constant="120" id="RWD-Bb-4eS"/>
-                            <constraint firstItem="iyR-vF-fzw" firstAttribute="top" secondItem="WFq-W2-heg" secondAttribute="bottom" constant="10" id="RrJ-Do-19k"/>
-                            <constraint firstItem="WFq-W2-heg" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.3" id="SHM-WZ-6YH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="C58-js-Ua8" secondAttribute="trailing" id="Swo-Lx-FJx"/>
                             <constraint firstAttribute="trailing" secondItem="rP3-iU-aDM" secondAttribute="trailing" id="W7k-l0-ZeE"/>
+                            <constraint firstItem="C58-js-Ua8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xzy-lV-uui"/>
                             <constraint firstAttribute="bottom" secondItem="iyR-vF-fzw" secondAttribute="bottom" id="aX6-xC-xRQ"/>
                             <constraint firstItem="Vjt-Qv-478" firstAttribute="top" secondItem="iyR-vF-fzw" secondAttribute="bottom" id="b1v-05-Zbk"/>
+                            <constraint firstItem="iyR-vF-fzw" firstAttribute="top" secondItem="C58-js-Ua8" secondAttribute="bottom" constant="5" id="c6H-4V-xEN"/>
                             <constraint firstItem="rP3-iU-aDM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cV1-rg-r47"/>
-                            <constraint firstItem="Vjt-Qv-478" firstAttribute="top" secondItem="Gkz-ot-EnR" secondAttribute="bottom" constant="50" id="cWb-d4-mzS"/>
                             <constraint firstItem="Q2y-T6-RgJ" firstAttribute="top" secondItem="zki-3M-HWx" secondAttribute="bottom" id="clW-gi-Q2R"/>
+                            <constraint firstItem="C58-js-Ua8" firstAttribute="top" secondItem="HGb-43-VQa" secondAttribute="bottom" constant="10" id="dUc-jD-fjk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iyR-vF-fzw" secondAttribute="trailing" constant="120" id="e7l-3K-DKr"/>
-                            <constraint firstItem="Gkz-ot-EnR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="egw-2V-IUy"/>
-                            <constraint firstItem="zwd-MT-fUt" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.3" id="ews-S3-Sva"/>
-                            <constraint firstItem="iyR-vF-fzw" firstAttribute="top" secondItem="Gkz-ot-EnR" secondAttribute="bottom" constant="10" id="f9k-i5-z49"/>
                             <constraint firstItem="zki-3M-HWx" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="hmJ-wA-TR4"/>
                             <constraint firstItem="iyR-vF-fzw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="l4x-cM-YhW"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="WFq-W2-heg" secondAttribute="trailing" id="mJp-L8-Brf"/>
-                            <constraint firstItem="Vjt-Qv-478" firstAttribute="top" secondItem="WFq-W2-heg" secondAttribute="bottom" constant="1" id="mfL-sL-D9a"/>
-                            <constraint firstItem="Gkz-ot-EnR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.3" id="rbU-bp-gx5"/>
                             <constraint firstItem="iyR-vF-fzw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xxH-ff-Pn5"/>
-                            <constraint firstItem="Vjt-Qv-478" firstAttribute="top" secondItem="zwd-MT-fUt" secondAttribute="bottom" constant="50" id="zlP-QW-zLP"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="RWD-Bb-4eS"/>
                                 <exclude reference="aX6-xC-xRQ"/>
                                 <exclude reference="e7l-3K-DKr"/>
-                                <exclude reference="Bpr-xD-qv6"/>
-                                <exclude reference="Hfc-1J-bLk"/>
-                                <exclude reference="cWb-d4-mzS"/>
-                                <exclude reference="mfL-sL-D9a"/>
-                                <exclude reference="zlP-QW-zLP"/>
                             </mask>
                         </variation>
                     </view>
