@@ -11,6 +11,8 @@
 #import "AllRecord+CoreDataProperties.h"
 #import "CoreDataManager.h"
 
+const CGFloat CELL_HEIGHT = 100.0;
+
 @interface HistoryTableViewController () <CoreDataManagerDelegate>
 {
     NSDateFormatter *dateFormater;
@@ -52,7 +54,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 110.0;
+    return CELL_HEIGHT;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

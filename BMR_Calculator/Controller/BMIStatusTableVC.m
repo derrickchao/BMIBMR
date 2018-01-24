@@ -10,6 +10,9 @@
 #import "BMIStatusCell.h"
 #import "Constants.h"
 
+const CGFloat IPHONE_CELL_HEIGHT = 40.0;
+const CGFloat IPAD_CELL_HEIGHT = 40.0;
+
 @interface BMIStatusTableVC ()
 
 @end
@@ -34,7 +37,11 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 40.0;
+    
+    if (self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassRegular && self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClassRegular) {
+        return IPAD_CELL_HEIGHT;
+    }
+    return IPHONE_CELL_HEIGHT;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

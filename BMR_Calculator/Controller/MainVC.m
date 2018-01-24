@@ -15,7 +15,7 @@
 #import "BMIStatusTableVC.h"
 
 @interface MainVC () <UITextFieldDelegate> {
-    UITextField *activeTextField;
+    UITextField *_activeTextField;
     BodyResult *_bodyResult;
 }
 
@@ -51,6 +51,14 @@
         self.weightTextField.placeholder = NSLocalizedString(@"KG", nil);
     } else {
         
+    }
+    
+    if (self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassRegular && self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClassRegular) {
+        self.cmTextField.font = [UIFont fontWithName:@"AvenirNext-Bold" size:26.0];
+        
+        UIFont *font = [UIFont boldSystemFontOfSize:22.0];
+        NSDictionary *attributes = @{NSFontAttributeName: font};
+        [self.genderSegmentControl setTitleTextAttributes:attributes forState:UIControlStateNormal];
     }
 }
 
@@ -286,8 +294,7 @@ actionCompletionHandler:(void (^)(void))completionHandler {
 
     } else {
         
-        // Create a newItem for every record.
-//        [[CoreDataManager shareInstance] createNewRecordWithBMI:self.bmiResultLabel.text bmr:self.bmrResultLabel.text timeStamp:[NSDate date]];
+        // Create a NSManagerObject for every record.
         [[CoreDataManager shareInstance] createNewRecord:_bodyResult];
         
         [self alertTitle:nil message:NSLocalizedString(@"SAVE_SUCCESSFULLY", nil) actionCompletionHandler:^{
@@ -297,17 +304,17 @@ actionCompletionHandler:(void (^)(void))completionHandler {
 }
 
 - (void)doneBarBtnPressed {
-    [activeTextField resignFirstResponder];
+    [_activeTextField resignFirstResponder];
 }
 
 - (void)cancelBarBtnPressed {
-    [activeTextField resignFirstResponder];
+    [_activeTextField resignFirstResponder];
 }
 
 #pragma mark - UITextFieldDelegate
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-    activeTextField = textField;
+    _activeTextField = textField;
 }
 
 @end

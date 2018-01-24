@@ -9,7 +9,7 @@
 #import "SettingsVC.h"
 #import "Constants.h"
 
-#define UNIT_PICKERVIEW_HEIGHT     100.0
+const CGFloat UNIT_PICKERVIEW_HEIGHT = 100.0;
 
 @interface SettingsVC () <UIPickerViewDelegate, UIPickerViewDataSource> {
     NSArray *_unitArray;

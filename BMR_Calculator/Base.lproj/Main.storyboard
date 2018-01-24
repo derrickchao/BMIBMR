@@ -54,18 +54,27 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="24"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="40"/>
+                                        </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCZ-Tf-dQD">
-                                        <rect key="frame" x="0.0" y="50" width="171.5" height="50"/>
+                                        <rect key="frame" x="0.0" y="50" width="171.5" height="49.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="24"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="40"/>
+                                        </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q4c-qB-9wo">
-                                        <rect key="frame" x="0.0" y="143" width="171.5" height="50"/>
+                                        <rect key="frame" x="0.0" y="142.5" width="171.5" height="49.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="24"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="40"/>
+                                        </variation>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Vny-qr-LZh">
                                         <rect key="frame" x="171.5" y="8" width="171.5" height="36.5"/>
@@ -76,37 +85,52 @@
                                         <color key="tintColor" red="0.31764705879999999" green="0.64313725489999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </segmentedControl>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Ss9-BT-8D4">
-                                        <rect key="frame" x="171.5" y="58.5" width="171.5" height="34.5"/>
+                                        <rect key="frame" x="171.5" y="58" width="171.5" height="34.5"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="26"/>
+                                        </variation>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="lb" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dIj-l4-Rum">
-                                        <rect key="frame" x="171.5" y="150" width="171.5" height="35"/>
+                                        <rect key="frame" x="171.5" y="150.5" width="171.5" height="34"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="26"/>
+                                        </variation>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K14-4g-0qz">
-                                        <rect key="frame" x="0.0" y="93" width="343" height="50"/>
+                                        <rect key="frame" x="0.0" y="92.5" width="343" height="50"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="inch" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="lJt-1F-9uT">
-                                                <rect key="frame" x="266" y="10.5" width="77" height="35.5"/>
+                                                <rect key="frame" x="266" y="11" width="77" height="35.5"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="26"/>
+                                                </variation>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFI-2a-E5k">
                                                 <rect key="frame" x="0.0" y="0.0" width="171.5" height="50"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="24"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="40"/>
+                                                </variation>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="feet" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="zQd-k0-UqD">
-                                                <rect key="frame" x="171.5" y="11" width="77" height="35"/>
+                                                <rect key="frame" x="171.5" y="11.5" width="77" height="35"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="26"/>
+                                                </variation>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -164,24 +188,36 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="24"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="30"/>
+                                        </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BMR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwl-ci-qvw">
                                         <rect key="frame" x="181.5" y="0.0" width="69" height="27"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="24"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="30"/>
+                                        </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="dEP-Za-1fs">
-                                        <rect key="frame" x="89" y="1" width="76.5" height="26"/>
+                                        <rect key="frame" x="89" y="1" width="76.5" height="26.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                         <color key="textColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
+                                        </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="nVK-Ap-dgQ">
-                                        <rect key="frame" x="250.5" y="0.0" width="117.5" height="27"/>
+                                        <rect key="frame" x="250.5" y="0.5" width="117.5" height="26.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                         <color key="textColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                        </variation>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sxN-kf-JD8">
                                         <rect key="frame" x="165.5" y="0.0" width="1" height="27"/>
@@ -198,13 +234,16 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suggest Weight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="jKj-6y-zrN">
-                                        <rect key="frame" x="20" y="28" width="134" height="27"/>
+                                        <rect key="frame" x="20" y="28" width="135" height="27"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="30"/>
+                                        </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKd-Jf-dqb">
-                                        <rect key="frame" x="154" y="28" width="229" height="27"/>
+                                        <rect key="frame" x="155" y="28" width="228" height="27"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                         <color key="textColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -239,7 +278,9 @@
                                     <constraint firstItem="jKj-6y-zrN" firstAttribute="top" secondItem="bhI-aU-4hT" secondAttribute="bottom" id="uBs-PK-b14"/>
                                     <constraint firstItem="jKj-6y-zrN" firstAttribute="width" secondItem="Q2y-T6-RgJ" secondAttribute="width" multiplier="0.35" id="uWd-eL-eLa"/>
                                     <constraint firstItem="bhI-aU-4hT" firstAttribute="top" secondItem="hwl-ci-qvw" secondAttribute="bottom" id="vzQ-Er-NbT"/>
-                                    <constraint firstAttribute="height" constant="55" id="w8r-fs-71M"/>
+                                    <constraint firstAttribute="height" constant="55" id="w8r-fs-71M">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="90"/>
+                                    </constraint>
                                     <constraint firstItem="bhI-aU-4hT" firstAttribute="top" secondItem="eND-fB-vPH" secondAttribute="bottom" id="xr2-km-nur"/>
                                 </constraints>
                             </view>
@@ -247,7 +288,9 @@
                                 <rect key="frame" x="16" y="518" width="112.5" height="40"/>
                                 <color key="backgroundColor" red="0.011764705882352941" green="0.66274509803921566" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="umZ-O4-aCg"/>
+                                    <constraint firstAttribute="height" constant="40" id="umZ-O4-aCg">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="60"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                 <state key="normal" title="Calculate">
@@ -261,7 +304,9 @@
                                 <rect key="frame" x="131.5" y="518" width="112.5" height="40"/>
                                 <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="gB5-W9-zRg"/>
+                                    <constraint firstAttribute="height" constant="40" id="gB5-W9-zRg">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="60"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                 <state key="normal" title="Clear">
@@ -275,7 +320,9 @@
                                 <rect key="frame" x="246.5" y="518" width="112.5" height="40"/>
                                 <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="4Nz-VG-hYK"/>
+                                    <constraint firstAttribute="height" constant="40" id="4Nz-VG-hYK">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="60"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                 <state key="normal" title="Save">
@@ -400,16 +447,22 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="0i3-hv-19C">
-                                            <rect key="frame" x="38" y="21.5" width="205.5" height="17.5"/>
+                                            <rect key="frame" x="38" y="21.5" width="188.5" height="17.5"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=regular">
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                            </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8U-cA-ltF">
-                                            <rect key="frame" x="243.5" y="21.5" width="114.5" height="17.5"/>
+                                            <rect key="frame" x="226.5" y="21.5" width="100.5" height="17.5"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=regular">
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                            </variation>
                                         </label>
                                     </subviews>
                                     <constraints>
@@ -484,6 +537,9 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="34"/>
+                                        </variation>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFK-aK-MkR">
                                         <rect key="frame" x="331" y="0.0" width="40" height="40"/>
@@ -500,6 +556,9 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="28"/>
+                                        </variation>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.64705882349999999" green="0.83921568629999999" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -514,7 +573,9 @@
                                     <constraint firstItem="snt-Tj-fJC" firstAttribute="top" secondItem="PpY-7I-D54" secondAttribute="top" id="e0U-qK-AKl"/>
                                     <constraint firstItem="bbI-NX-Maj" firstAttribute="leading" secondItem="snt-Tj-fJC" secondAttribute="trailing" id="hhk-Ou-jnT"/>
                                     <constraint firstItem="mFK-aK-MkR" firstAttribute="leading" secondItem="bbI-NX-Maj" secondAttribute="trailing" id="jE8-96-znQ"/>
-                                    <constraint firstAttribute="height" constant="40" id="jMw-es-PAS"/>
+                                    <constraint firstAttribute="height" constant="40" id="jMw-es-PAS">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="65"/>
+                                    </constraint>
                                     <constraint firstItem="bbI-NX-Maj" firstAttribute="top" secondItem="PpY-7I-D54" secondAttribute="top" id="nX3-lf-Vg8"/>
                                 </constraints>
                             </view>
@@ -531,6 +592,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
+                                </variation>
                             </textView>
                             <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T3L-L7-mlY">
                                 <rect key="frame" x="0.0" y="107" width="375" height="0.0"/>
@@ -601,34 +665,48 @@
                                             <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="22"/>
                                             <color key="textColor" red="0.7843137255" green="0.7843137255" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=regular">
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="30"/>
+                                            </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BMI" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="Ijh-Ud-VqN">
                                             <rect key="frame" x="16" y="11" width="105" height="26.5"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="22"/>
                                             <color key="textColor" red="0.7843137255" green="0.7843137255" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=regular">
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="30"/>
+                                            </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="9LV-HA-cSf">
-                                            <rect key="frame" x="82.5" y="45" width="287.5" height="27"/>
+                                            <rect key="frame" x="78" y="45" width="292" height="26.5"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="22"/>
                                             <color key="textColor" red="0.7843137255" green="0.7843137255" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=regular">
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="28"/>
+                                            </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PkM-Qa-fAH">
-                                            <rect key="frame" x="16" y="45" width="61.5" height="27"/>
+                                            <rect key="frame" x="16" y="45" width="62" height="26.5"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="62" id="GJM-Cm-QH7"/>
+                                                <constraint firstAttribute="width" constant="62" id="GJM-Cm-QH7">
+                                                    <variation key="heightClass=regular-widthClass=regular" constant="90"/>
+                                                </constraint>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="22"/>
                                             <color key="textColor" red="0.7843137255" green="0.7843137255" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=regular">
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="28"/>
+                                            </variation>
                                         </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="ix5-x2-NUs" firstAttribute="trailing" secondItem="CZz-58-a24" secondAttribute="trailingMargin" id="19m-ac-qys"/>
                                         <constraint firstItem="bnn-fP-9Cv" firstAttribute="width" secondItem="CZz-58-a24" secondAttribute="width" multiplier="0.6" id="8Zi-nV-HiO"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="ix5-x2-NUs" secondAttribute="bottom" id="ArI-Om-Cnt"/>
-                                        <constraint firstItem="9LV-HA-cSf" firstAttribute="leading" secondItem="PkM-Qa-fAH" secondAttribute="trailing" constant="5" id="CGE-0t-YZV"/>
+                                        <constraint firstItem="9LV-HA-cSf" firstAttribute="leading" secondItem="PkM-Qa-fAH" secondAttribute="trailing" id="CGE-0t-YZV"/>
                                         <constraint firstItem="bnn-fP-9Cv" firstAttribute="centerY" secondItem="Ijh-Ud-VqN" secondAttribute="centerY" id="KAt-oO-MRi"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="bnn-fP-9Cv" secondAttribute="trailing" id="Mlq-qo-W9H"/>
                                         <constraint firstItem="9LV-HA-cSf" firstAttribute="height" secondItem="PkM-Qa-fAH" secondAttribute="height" id="Z9X-gD-SQt"/>
