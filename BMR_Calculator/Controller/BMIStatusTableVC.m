@@ -49,6 +49,10 @@ const CGFloat IPAD_CELL_HEIGHT = 55.0;
     
     [cell configureCell:indexPath bodyResult:self.bodyResult];
     
+#ifdef DEBUG
+    NSLog(@"cell color: %@, index:%ld", cell.backgroundColor, indexPath.row);
+#endif
+    
     return cell;
 }
 

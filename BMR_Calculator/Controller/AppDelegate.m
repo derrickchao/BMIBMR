@@ -33,10 +33,7 @@
     if (![[NSUserDefaults standardUserDefaults] objectForKey:UNIT_KEY]) {
         
         NSString *currentLanguage = [[NSLocale preferredLanguages] firstObject];
-#ifdef DEBUG
-        NSLog(@"language: %@ ", currentLanguage);
-#endif
-        if ([currentLanguage isEqualToString:@"zh-Hant-TW"]) {
+        if ([currentLanguage hasPrefix:@"zh-Hant"]) {
             [[NSUserDefaults standardUserDefaults] setObject:METRIC_UNIT forKey:UNIT_KEY];
         } else {
             [[NSUserDefaults standardUserDefaults] setObject:IMPERIAL_UNIT forKey:UNIT_KEY];

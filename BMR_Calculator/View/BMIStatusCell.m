@@ -63,6 +63,8 @@
         }
         if (indexPath.row == index) {
             self.backgroundColor = [UIColor lightGrayColor];
+        } else {
+            self.backgroundColor = [UIColor clearColor];
         }
     } else {
         self.backgroundColor = [UIColor clearColor];
