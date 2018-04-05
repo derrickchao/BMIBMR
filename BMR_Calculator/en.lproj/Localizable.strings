@@ -8,8 +8,8 @@
 
 "METRIC" = "Metric";
 "IMPERIAL" = "Imperial";
-"KG" = "Kg";
-"LB" = "Lb";
+"KG" = "kg";
+"LB" = "lb";
 "CM" = "cm";
 "FEET" = "feet";
 "INCH" = "inch";

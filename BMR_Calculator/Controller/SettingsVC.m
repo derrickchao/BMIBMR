@@ -109,6 +109,8 @@ const CGFloat UNIT_PICKERVIEW_HEIGHT = 100.0;
     [[NSUserDefaults standardUserDefaults] synchronize];
     self.unitLabel.text = [_unitArray objectAtIndex:row];
     [[NSNotificationCenter defaultCenter] postNotificationName:kUnitDidChangeNotification object:nil];
+    
+    [self collapseUnitMenu];
 }
 
 #pragma mark - Action Methods

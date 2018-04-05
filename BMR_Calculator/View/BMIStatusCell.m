@@ -15,6 +15,7 @@
     [super prepareForReuse];
     
     self.backgroundColor = [UIColor clearColor];
+    self.selected = false;
 }
 
 - (void)configureCell:(NSIndexPath *)indexPath
@@ -23,6 +24,8 @@
     self.statusLabel.text = [BMI_STATUS_LOCALIZABLE_ARRAY objectAtIndex:indexPath.row];
     self.statusRangeLabel.text = [BMI_RANGE_ARRAY objectAtIndex:indexPath.row];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    self.backgroundColor = [UIColor clearColor];
     
     switch (indexPath.row) {
         case 0:
@@ -63,6 +66,7 @@
         }
         if (indexPath.row == index) {
             self.backgroundColor = [UIColor lightGrayColor];
+            self.selected = true;
         } else {
             self.backgroundColor = [UIColor clearColor];
         }

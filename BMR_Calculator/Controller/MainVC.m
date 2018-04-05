@@ -48,9 +48,9 @@
         [self setupCMTextField];
         self.feetTextField.hidden = true;
         self.inchTextField.hidden = true;
-        self.weightTextField.placeholder = NSLocalizedString(@"KG", nil);
+        self.weightTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"KG", nil) attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor], NSFontAttributeName: [UIFont fontWithName:@"AvenirNext-Bold" size:18.0]}];
     } else {
-        
+        self.weightTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"LB", nil) attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor], NSFontAttributeName: [UIFont fontWithName:@"AvenirNext-Bold" size:18.0]}];
     }
     
     if (self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassRegular && self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClassRegular) {
@@ -78,13 +78,14 @@
     if (!_cmTextField) {
         _cmTextField = [[UITextField alloc] init];
         _cmTextField.translatesAutoresizingMaskIntoConstraints = false;
-        _cmTextField.placeholder = NSLocalizedString(@"CM", nil);;
+        _cmTextField.placeholder = NSLocalizedString(@"CM", nil);
         _cmTextField.textAlignment = NSTextAlignmentCenter;
         _cmTextField.borderStyle = UITextBorderStyleRoundedRect;
         _cmTextField.delegate = self;
         _cmTextField.font = [UIFont fontWithName:@"AvenirNext-Bold" size:18.0];
         _cmTextField.keyboardType = UIKeyboardTypeNumberPad;
         _cmTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+        _cmTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"CM", nil) attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor], NSFontAttributeName: [UIFont fontWithName:@"AvenirNext-Bold" size:18.0]}];
     }
     
     return _cmTextField;
@@ -153,6 +154,9 @@
     self.inchTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
     self.weightTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
     
+    self.inchTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"INCH", nil) attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor], NSFontAttributeName: [UIFont fontWithName:@"AvenirNext-Bold" size:18.0]}];
+    self.feetTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"FEET", nil) attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor], NSFontAttributeName: [UIFont fontWithName:@"AvenirNext-Bold" size:18.0]}];
+    
     // Create a Toolbar for TextFields
     UIToolbar *toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
     UIBarButtonItem *doneBarBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneBarBtnPressed)];
@@ -204,7 +208,7 @@ actionCompletionHandler:(void (^)(void))completionHandler {
     
     if ([self isImperialUnit]) {
         self.cmTextField.hidden = true;
-        self.weightTextField.placeholder = NSLocalizedString(@"LB", nil);
+        self.weightTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"LB", nil) attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor], NSFontAttributeName: [UIFont fontWithName:@"AvenirNext-Bold" size:18.0]}];
         self.feetTextField.hidden = false;
         self.inchTextField.hidden = false;
     } else {
@@ -212,7 +216,7 @@ actionCompletionHandler:(void (^)(void))completionHandler {
         self.cmTextField.hidden = false;
         self.feetTextField.hidden = true;
         self.inchTextField.hidden = true;
-        self.weightTextField.placeholder = NSLocalizedString(@"KG", nil);
+        self.weightTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"KG", nil) attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor], NSFontAttributeName: [UIFont fontWithName:@"AvenirNext-Bold" size:18.0]}];
     }
     
     [self setDefault];
@@ -248,7 +252,6 @@ actionCompletionHandler:(void (^)(void))completionHandler {
             self.suggestWeightResultLabel.text = [NSString stringWithFormat:@"%.1f~%.1f %@", _bodyResult.suggestLowerWeight, _bodyResult.suggestUpperWeight,NSLocalizedString(@"LB", nil)];
             
             self.bmiStatusTableVC.bodyResult = _bodyResult;
-            [self.bmiStatusTableVC.tableView reloadData];
         }
     } else {
         
